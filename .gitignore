@@ -1,0 +1,8 @@
+# Discord webhook (hemlig!)
+.env
+
+# Cron-loggar
+logs/
+
+# Node
+node_modules/
