@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Daily — 2026-08-06</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --cyan: #00d9ff;
+            --gold: #ffb800;
+            --magenta: #ff0080;
+            --green: #00ff88;
+            --purple: #9d4edd;
+            --dark-bg: #050510;
+            --panel-bg: #0d0d1f;
+            --card-bg: #14142a;
+            --border: rgba(0, 217, 255, 0.15);
+            --text: #e8e8f0;
+            --text-dim: #8a8aa3;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 20% 0%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(157, 78, 221, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 184, 0, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 30px; }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid var(--cyan);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cyan), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+        .date {
+            color: var(--cyan);
+            font-size: 0.85rem;
+            margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 1px;
+        }
+
+        .editorial {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.06), rgba(255, 184, 0, 0.04));
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 40px 50px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .editorial-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--gold);
+            color: var(--dark-bg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .intro {
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .analyses {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .analysis-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--cyan);
+            border-radius: 8px;
+            padding: 24px 30px;
+            transition: all 0.2s ease;
+        }
+        .analysis-card:hover {
+            border-left-color: var(--gold);
+            transform: translateX(4px);
+        }
+        .analysis-card h3 {
+            color: var(--cyan);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .analysis-card p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 50px 0 30px 0;
+            text-align: center;
+        }
+
+        .cat-section {
+            margin-bottom: 50px;
+        }
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border);
+        }
+        .cat-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+        .count {
+            background: var(--cyan);
+            color: var(--dark-bg);
+            padding: 3px 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            border-radius: 100px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .news-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .news-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.1);
+        }
+        .news-link {
+            display: block;
+            padding: 22px 24px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .news-link h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+        .news-link:hover h3 { color: var(--cyan); }
+        .summary {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .read-more {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s;
+        }
+        .news-link:hover .read-more { transform: translateX(4px); }
+
+        .empty {
+            text-align: center;
+            color: var(--text-dim);
+            padding: 60px 20px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">AI NEWS DAILY</div>
+            <h1>📡 Dagens AI-nyheter</h1>
+            <div class="subtitle">Redaktionell sammanfattning av AI-världen</div>
+            <div class="date">torsdag 6 augusti 2026</div>
+        </header>
+
+
+        <div class="editorial">
+            <div class="editorial-tag">📝 REDAKTIONELLT</div>
+            <h2 class="headline">Suno bromsar, lokal AI accelererar – dagen då AI flyttar hem till hårdvaran</h2>
+            <p class="intro">Dagens AI-nyheter visar en tydlig tudelning: medan musikplattformen Suno försöker täppa till läckorna kring upphovsrätt och spam, tar lokal AI ett rejält kliv framåt med nya partnerskap, hårdvara och lagringslösningar. Gränsen mellan moln och enhet håller på att luckras upp på allvar.</p>
+        </div>
+        <div class="analyses">
+        <div class="analysis-card">
+            <h3>🖥️ Lokal AI</h3>
+            <p>Den röda tråden är tydlig: AI vill bort från molnet och in i användarens egen maskin. GIGABYTE:s nya 1600W-nätagg signalerar att entusiastbyggen för lokal AI kräver rejäl strömbudget, medan OmniCore-NAS:en visar att SSD-baserad lagring nu ses som en förutsättning för att köra modeller hemma. Googles avslöjande om hur mycket diskutrymme Chrome vill ha för lokala AI-modeller är en pragmatisk påminnelse om att 'lokal AI' fortfarande kostar – och MacPaws partnerskap med Liquid AI visar att Mac-plattformen gör ett seriöst försök att hävda sig i on-device-segmentet. Sammantaget: infrastrukturen för lokal AI mognar snabbt, men det är fortfarande en nisch för den ström- och lagringsvillige.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🎵 Musik-AI</h3>
+            <p>Suno dominerar nyhetsflödet, men av helt andra skäl än tekniska genombrott. Företaget lanserar både vattensignering för att märka AI-genererat ljud, vinylpressning av AI-musik och nya policyer mot spam – alltmedan upphovsrättstvisterna pågår. Det luktar mindre innovation och mer krishantering: Suno försöker positionera sig som en ansvarstagande aktör innan regleringarna hinner ikapp. Frågan är om vattensigneringar och principer räcker, eller om branschen behöver tvingande märkning. Att erbjuda fysisk vinyl på AI-genererad musik är ett smart marknadsföringsdrag men riskerar att provocera musikindustrin ytterligare.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🎨 3D-AI &amp; Modeller</h3>
+            <p>Två små men intressanta signaler: OutLangSplat visar att Gaussian Splatting-tekniken nu tar steget utomhus och upp i luften via drönare, medan Creality packar en laser/NIR-skanner i fickformat med splatting-stöd på väg. Det handlar om att göra 3D-rekonstruktion tillgänglig för fler – från forskning till konsument. Riktigt genomslag får tekniken först när den blir billig och enkel nog att inte kräva specialutbildning.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🧊 Blender + AI</h3>
+            <p>Att Cuisinart använder AI-genererade reklamfilmer säger mindre om Blender specifikt och mer om att generativ AI nu är en självklarhet i produktionskedjor – även för välkända konsumentvarumärken. Nyheten fungerar som en temperaturmätare: AI i kreativa arbetsflöden har passerat tidig-fas-fascination och blivit standardverktyg.</p>
+        </div>
+</div>
+
+<h2 class="section-title">📰 Alla nyheter</h2>
+        <section class="cat-section" data-cat="Lokal AI">
+            <div class="cat-header">
+                <h2>🖥️ Lokal AI</h2>
+                <span class="count">17</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBGcUFzRW1paEdVX29KS0hNT0JIVkNMM0VyZDdOU2RIUm5zcU9BeFRoMGw5WEkwS20yX1NtVFJIdUlRMm9nNlZrQ3ZGVXN2eGNSSGk0QnNzQzlxZThhVkp6Z2tFTksteENkUHN4enVSOA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>GIGABYTE Launches AORUS P1600W Power Supply For Gaming And Local AI-Focused PC Builds - Pokde.Net</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;GIGABYTE Launches AORUS P1600W Power Supply For Gaming And Local AI-Focused PC Builds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Pokde.Net&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE4wUndYUk9uVzVqek9FcXBRVUNFelB5b3Z0SnRXMGVITTFhek92MzVKN2tLN1hyRzJwSm1jb1VhV0VOanZlVmExb1VMSkdnb0poY1N2bjdjZ2gxeHkzZVQwSEotX3JtR29FR2VVMUJaemxPNFZ6WlRSYnQyb3doUQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google reveals how much free space Chrome wants to install local AI models - Android Authority</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google reveals how much free space Chrome wants to install local AI models&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Android Authority&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE8yc1pWTkwzT0lMUThRWHJEc3NFUkNsSDhXVnR3VW43eDEzN3FxRlF5TXA1cjBZLTVsTGJkN3Y0SzBHeGNNQnFiblJRbDFEUUxadFdoQldYOFBScVJjaHF3WTRpdEROdGVjVUJwamZONkVFTDA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw teams up with Liquid AI to bring on-device AI to its Mac assistant - Cult of Mac</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw teams up with Liquid AI to bring on-device AI to its Mac assistant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Cult of Mac&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNUFRSMTRKM0swaC1tWF9XTWhHQVZuay15UC1mTTBIYVZTSWRhVkdOM3EtbngzdnZQNjV4RURpY2FLTmhsV1RfczZPU05lWjJlQ3FGNlRzM0h3ZTdPN3RDeS1JS3JtbmVxVGtTeXVZY2JtZFQ1QUVYTkJVTWxKVlJhVG1hZ3lDRFg3MVBhODNyNnZ4TW5sNW1BbnpkR3FTS0ZLcDUtUA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>FMS 2026: OmniCore NAS: Fast All-SSD Storage with Local AI - StorageNewsletter</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;FMS 2026: OmniCore NAS: Fast All-SSD Storage with Local AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;StorageNewsletter&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQMGEtRFBLemdmQ1dpUUJkX0xFMlNrQVJZTzFKVlNpaTZkbWlRRjYwZS0tbUtsS0dyRWpSNzRBd3E0a1ZycGxYZnVURlpYRkZwck4yM19VcGEwWDFSTWhhV1p6cWROa05pSXBJMld2YUpoc2pEd0dYQmcxVzlPQlJaaTFyRk1uV2Q1ZVZyZUJXMFRxRVZrMXl1T1V0WTFydW14Q256LU5vWlo1MzcwdHlJMUlUUU1yMzg1VWRUbGRVeFdYcjdn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw and Liquid AI announce partnership to build on-device AI for Mac - en.ain.ua</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw and Liquid AI announce partnership to build on-device AI for Mac&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;en.ain.ua&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPaGlrN0hwVmRadkllOFVqMVVVUUVFaHo0aUF6OXFUZEtoaklYbGFqaWVqcURyZjRsSXUwVjd1amwwcFNmZDRSS0xvVDBBb2xZN0l2b1dxb01kcjlpMUNyU3Fvd2xETXkxb0R6c29ib3JGcllYR3ZXY3A5R0h2SUNmMGdJVlhtc1Q5emp4RDE0Nl9vSlk2RjYzR3hRbElwclVXVkV4a3RuZFJfWnRBcXhIXw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Anker Innovations puts on-device AI at heart of next-gen wearables, says Jeffrey Liu - TahawulTech.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Anker Innovations puts on-device AI at heart of next-gen wearables, says Jeffrey Liu&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TahawulTech.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxORnRYZVN4ZWRSbnAtek9iYmJCekdFOURLN2dRaGxYSUJZM2JPeXd4cVZqS3NyclJEZDV3bE9VeGY2blFEbndaYUx4NTFtTzNVQ1YzZkdQdlJDaFhjZGRFaXdkaU1yY3JHM0diQlNLVlBiVFctampRRE8wZ3dockc1NjdfX1NHRVp1SDk2UllTNk1xVmpPUWZha3V4TUtET3A3WFhTcG0tbnM0TjBUNnRjdk5qeTR2NmVG?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw Partners with Liquid AI to Bring On-Device AI to Millions of Mac Users - AiThority</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw Partners with Liquid AI to Bring On-Device AI to Millions of Mac Users&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;AiThority&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQNjdtbjdxYnJ0WG5QNlRlUTJHNEtubjMyZWtJdjhsYVJXaFdVaWZzb28xdnJJUVc5UjV5UHBkWHlCMzJRZ1ZfWWM5Mk9yVGllYlZIN3E2dXhaZ1RBNFdDQXBOU3FzX3FVUUhtVEJQUzBPd1RGNmt5NzJvLXVGSnJRdElCcUNNTnVleW1Hb19uT21EN1gyZmVmN0NIOF9EdG96Z29XTw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Airtel deploys on-device AI model for 30,000 field engineers - tele.net.in</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Airtel deploys on-device AI model for 30,000 field engineers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tele.net.in&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNU09PYWhaeVJSOWMtcDZGdVRwOUhqdkplMy1QcjBiMFhfbER0Tjd5a2hzWXVoM1B4Ui1FOFJkTmMtTkxMNjFtVkwyNjVvZ2dRZ1JTbUlTTmQzcVo0aVhZMEg4VEtjVWZCQkhhbWlNSnh6V0RwT3JyV1d1ekM0MjlhMnp2WjhyS1c1SWNEMUw2THBMbFlhM2l6MjEyT2Q4dG5sOU5MVGdwRm5LY2d4ZmRvekV3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>InfraShield to Debut Secure, Local AI Platform at Nuclear Industry's Premier Technology &amp;amp; Cybersecurity Conference - The National Law Review</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;InfraShield to Debut Secure, Local AI Platform at Nuclear Industry's Premier Technology &amp; Cybersecurity Conference&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The National Law Revie...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOXzI3OUtHNGdudFFfS0hoZ00taFJ5QjFqOUUwY1hHakl5dzZkSnh2akFnR1RyREZfVl9Kb0Q1Y1dqVHVZVURGNWRMajdNT3VmWXp5NGwtZkJ5MjVYWGZZRl9kTTFoSW9pcVY3eVdodmxreG1fUDZuLXhFZVB2YmtteFhHZ2MyUmwt?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw and Liquid AI partner to bring on-device AI to SetApp developers - CryptoRank</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw and Liquid AI partner to bring on-device AI to SetApp developers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;CryptoRank&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE1SRWlLcV9QVDVHWVA3MFdVTWo0M01GaUlITlJPQkFFTFBQVHMzSTExSllYY3Fuc3U0dWZIZU4wTlJ0Tnl2S05Cb1NCcW9YZ2U0azh6SENHZjR5a0pQTE9Jcm11a2cwQ0VjR0VlajhHUXNhXzdUUTlKbXhn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw to ship unique on-device AI for Macs - applemust.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw to ship unique on-device AI for Macs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;applemust.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9penhMb3dBTlh2dlNqcjJsWGFsekg5Z0M4LTVKZGdKZUtJdVBtQVpGcnJseTUxOGVpcHR5a0tUOFg4c3VpaHdIbEtMeElHT3ZhN3YtX0tKMUxDSl9Zb0Q2UGp5TFRIZHNvMjhCRzhR0gFzQVVfeXFMTUhjWWpsQWlueVJ5dkRMN3RlRVRxdU55THV6UWpGWlV0a1B6c1oyNEhDN242Q0ZVQ3QyMUtxa2JlTXhMakhvZVRuLVB4cEs2ZllibnZXdGZ4UFdXb1QyM2V1NE41ajRUUGZRSE9lWlNPcm9hSQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ukrainian company MacPaw has partnered with Liquid AI to develop on-device AI for Mac - Mezha</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ukrainian company MacPaw has partnered with Liquid AI to develop on-device AI for Mac&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Mezha&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQRmcxbzNCdXEwWXdfTm4zYnZpVkkxVi1fQmI0cjBUd2IxcUloSWVGODU4MUkzOVJ2b1hGYjh0RGNNQVdUZXpjeGpKby1nVUtxenRwc19xUHpma0pNS25UY0hkZUtuUWxscmxvYjdUMFM3amcyekpDUmlJMFFIU0pVN29HUmhaR05RT1JITE94QjBPb0NOWk0zYnlxTVhNb1V2SHRkdk1LQmNESkxw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw is building an on-device AI layer that will work across your Mac apps - 9to5Mac</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw is building an on-device AI layer that will work across your Mac apps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;9to5Mac&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFA2VmFPcUZRX2NZTmY0X2RsNFdfcHd0bndiUFJNRmg5UEdQWDJBOVdjb3h3U3hwUzBPQTlMZ2R0cW1rNTJObkRoUkx5T2lGQW43X3ZGNHk4WF96ZkVVTFlkZWROcHZCNUNGbXc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw Partners With Liquid AI to Bring Private On Device AI to Macs - Межа. Новини України.</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw Partners With Liquid AI to Bring Private On Device AI to Macs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Межа. Новини України.&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxONTZKRk9xcEJqd2JXOW02Z2dSYmF4TXVJTTRHU0hIODA0T24yQkZMdXBVWk1CdzUyYkp6R2hLOFB3WER1cFk5U2dPVXN4SV9JdjR1VW4taXVyYUhfMTkxZzJBQ3luNHBkQUpVLVVibm80dlF0ZmFlMWRReENZRmJfV2ZOUkRzTV8xaENld3BkVFk?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw Partners with Liquid AI for On-Device Inference - The Tech Buzz</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw Partners with Liquid AI for On-Device Inference&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Tech Buzz&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNNG1FQ1JMSVphc2g4LTc0eGJIemxRbmRDV2d4di1mUFhQMVhFRmlZMVhHWmtxM09PR3Z5VU5wXzhpbmRCM0QxanRlYjNqblM1RlFxWFNMNlJWVnB2aUd4Wmk0TF8ya0dadGphQU9TVU16aXh5c1FhRFZFYWV5aVpuN2h6dWZCejdwQXNDYzRNVHdLZE9JUi1aVHV5dWZfakF6UWo0R0NWLS1xTXUxVmh3QWtLbw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MacPaw Partners With Liquid AI To Bring On-Device AI To Macs - Forbes</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MacPaw Partners With Liquid AI To Bring On-Device AI To Macs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Forbes&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcFNKRlNQU2R5QjNZZ1pvUl9zanVXQnJZMklXb2VvNU81Z1ZCTzgzbTNpcFdpVmdfOVZaN2lNclV0RF8tUk1QVnNnTXQybG5MMnNwWkZaUEZyb1ZnTENaMS1wWWI1SFR2ZlI5WEdJc19mY3QtYklkc1NuTkQwcHdLUUZseVdYU1hMemVtekczZm5McmxZMlNuRlF3Q2pLVU5YX1FhdDJsdy1aZUVlUUVudzZqYXRUU2l1TjlldExmR3JNRTZlaDJoNGxrYTlYRHhDcWZz?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google quietly rewrote Chrome's AI documentation with important answers to on-device AI downloads - Digital Trends</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google quietly rewrote Chrome's AI documentation with important answers to on-device AI downloads&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Digital Trends&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="cat-section" data-cat="Musik-AI">
+            <div class="cat-header">
+                <h2>🎵 Musik-AI</h2>
+                <span class="count">31</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNRHZMQThsZnFpNVYzNDI0S0pQZ1N3MmVwSllWV3drQUw3a3JqdFpOdWZocml6VWYxV2VQMjktSXRjTXJlRElCdjgwTWhVcElxQmRibTZaal9neTBlQUEweFEzamI2OTRtWnJnUFVvUkdJT0xHUjJySXlvaXRucElTUzBIb2pLeGx5SGhDaUdrcjRVenF6dFVmUVlB?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Is Adding Audio Watermarks So AI-Generated Songs Are More Easily Identifiable - Engadget</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Is Adding Audio Watermarks So AI-Generated Songs Are More Easily Identifiable&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Engadget&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYnU4cXZXTFJYQXQwZmNmdnhzeUFtamJaRnBTQ0VQMUdPcFc4OEdQM21LOEVfMlNlcXl2YnkwaGNmemtYaWJJMzBUbnBwbzNqZzNvQy04X3JvSGduQm1OZHNBSGt4RWF1b2pfdUFSbHFmaDRTal9udl9UY3FUb1Rnczh3UktpWnVXMVowUkZMalY0RHZ3eDVzejIwRmFzNlQ1MDM2UU9nZi1STGc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno unveils AI-generated vinyl service amid ongoing copyright disputes - Music In Africa</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno unveils AI-generated vinyl service amid ongoing copyright disputes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music In Africa&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNVG9sdU5pNVhRSFVmczhEcFVuOW9iSXBkV0d4TmlTa19mcFNHM3lCYnU1VXBJVkhuVkQ0WWJaczhPdDNWRE1CMG1yZlByempDSlpqOVJYUDlrVGRoQU5JMXQxWGdBbGVSYWY0ZVB6UHZxM2w4T2RCa0prbEhEYmRoV2tJSEVvVTFCX2ZxOTFqTDA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno shares plans to combat spammy AI music - The Verge</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno shares plans to combat spammy AI music&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Verge&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQVXViUUhUSmpLWWlUa01XeUZ5SGZsazRtOWdJeHNQdjFDM1BaNW1uZ29za3BUWF9ubzZLa1QyUUVOaERKdGRMckU4VTUzR0hXSlRndVZvRVJfMjhnd25zbllkVXl4M1dqSUw4eEIwNXM1Ukt4M3RSQzNES1M3MmtuSzFQQQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Lays Out AI Music Principles After Copyright Fight - Unite.AI</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Lays Out AI Music Principles After Copyright Fight&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Unite.AI&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOZFE5T3F2dVp6MTdJbjdLOEpUcEFYaGsydUFBR1k2M0FrWlFvVFdrZ0xZdUItV1k4YXFfbUdmc1VWb2xma3FPZ190NW1yZ3dCTjFHNTRicUZ5VEJ3RDhhNzRuODBwZ2hRcjZRZHlDejVtTWpTUEdwNkdKcHRFVlFWX0tn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno to Offer Vinyl Pressings for Songs Created on AI Platform - Billboard</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno to Offer Vinyl Pressings for Songs Created on AI Platform&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Billboard&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5memRhaTZZdlgwUWdBd29MR2stNzNwZE0tc1ZlLVEtWkhDaGY3WXlRVFlha0RyS0RpX1A2YmQxUmdUZlNWbFRBS2M4SDE5QTJtaU9SV0pETjA4bmJJNUdwc0kwak9TcEkyTzdpWkpEMGpxOExRSVE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Oh Great—AI Slop Is Coming for Vinyl - Gizmodo</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Oh Great—AI Slop Is Coming for Vinyl&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Gizmodo&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE51dXpkZ2R6UERFcVprSmNob0tZa0FYU2Z1UXBDT1p3YmRjYzRrTHdjYktZSHU2NzRjbDlnY0hVcVlPT0NvQldNdFZMWG0wSXVIYk1wZldDejYxWnhOVVg2dkFuZTZ5OVpjVkljUnVrNA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Announces Sweeping Download and Labeling Changes - Digital Music News</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Announces Sweeping Download and Labeling Changes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Digital Music News&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9vNW9lbFl3eGdFLWNBUzI3cW9KU2ZnVW5hSmEzZF9ZSGZyTGxfWXZaNm9IVFV5bFRxNll0RzZ4ODRYVzdOVnljbDJKZHNMN2FJYS1fOVhLaFBhOUs4Z0pWWGsxNjF0bmtkLXhQQXRENA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno CEO insists Suno is “responsible” and isn’t going to leave people behind: “Music is one of the oldest forms of human expression, and it has always evolved alongside technology” - MusicTech</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno CEO insists Suno is “responsible” and isn’t going to leave people behind: “Music is one of the oldest forms of human expression, and it has always evolved alongside tech...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE4zVmphMTd6Zndrelh6bVEyU2hHYkRiR2xFUVBLOVJjYmlhLURaZXhBbldKSDVsR3daVE9vYVEwbWtRYmpvQzhSS1JleFlHaUdjOTR0dDlnUEpzMUlNMXY0?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno adds AI music safeguards as copyright lawsuits intensify - Межа. Новини України.</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno adds AI music safeguards as copyright lawsuits intensify&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Межа. Новини України.&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9nMDhTTmdpV3g5THE3Y0xNWXItV1lrRWs0bXp2WWZmdkhOUmVfelI0SnhQUV9lWmQxZ1o4ODNFdzJmaEdONmlPeFhCZFM0N05Ma0F2QlZtMEIzVi1WblZYb0hBZm9Jcmg2ZGM3SGFNRXpqWVhOT004?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno To Watermark AI-generated Songs And Tighten Policies Amid Legal Pressure - Bitcoin World</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno To Watermark AI-generated Songs And Tighten Policies Amid Legal Pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Bitcoin World&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOMU4zM0tsTGt3ZlVOX29TYjktQlZYSVFnb3JVWUVUUF91YXpkaWY1dm1hU0V5OGRDUC1ZdDZ0OTAyVi1SRWV3XzRQU1pLODNPMVgtVnZ3Q3ZyR1hmdTF6TS16R2tqLVRSdHZ4bFIxSkpXMlExcTNjSnd6YTBKb1RZakxyMDR4UjRXcXZVelhmS1NtaG8yelZPQWROR1c?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Amid legal battles, Suno says it will start watermarking songs - TechCrunch</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Amid legal battles, Suno says it will start watermarking songs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TechCrunch&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQOWYxdUwyYTBtRUF6SDlHR2llRk9MVGFIQXNPMVUzRHBteXNUc2N1am9FZkQweFNMYzNrYi1LM2NTWEowMDhKS0dSN2JhYmQ1cEdPVHh6VHFOT2xiN0lkcFNPb3VwbS03aGlOLUFRTVFzalF1UmRjRlRXSDFBZGs1cUp0Mmc3VktOLVFWSXQxVjVrMlFwZDdYNEJQQllzTGdIMVhOeGVMeXhtZDFMRjJ3emkxVUk0TVc4VjJIaW5NQjFoNVhoT2IxLXA0UQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno muscles into vinyl market, plans to let users press their AI songs onto 12-inch records - Music Business Worldwide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno muscles into vinyl market, plans to let users press their AI songs onto 12-inch records&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Business Worldwide&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxQdGpEc2sxNGIxNkkwNEg0WUFJNjZjcHFyczBqVDYwa05GcGtPdmdYZDFWSXpRS0cyZlR3WHdHMFh3U2steHhUTVFKQVU1eXlJalVRVnpPVXFsaVVPVkpyYzlXOWp1bGUtdXhMeFY1bUotaXhCMmx2TkhrQmFGcHFtUERXR21JZG9mSFI0MURsYnRkQlJaWTY0c053UFFjT19yWGp6WmxLM0tKZ2NVd281SnhweUY0NE5tb1p4Z1lnUlpEWG5Jdjd2Z1Y2eGZBUnVUUkoyNTRZZUNYbmlXU2c?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno becomes first customer of Musixmatch’s Sentinel, which screens AI prompts and outputs for copyrighted material - Music Business Worldwide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno becomes first customer of Musixmatch’s Sentinel, which screens AI prompts and outputs for copyrighted material&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Business Worldw...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPXzBqZXE0QlI3SnktVEhCa3Ftcjg1a1JHQnBmcmJLMWNpWnB3Y1RJUFBtVmhicjFxYVF3bmVQT3hsUGF0OU9GaXM0RHhjMnR5clA3UVN3cjc3ZnZmWU5KM0FFTXJ3Q090Q3NYVHo0NXR5cnFJd0NqU1I1VUtJNk5qUExuQlYwdGlXbHFBZmlJR1pubi1SSU5yUk53UF9EWHExTlh3TWpLRmE2U2M?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno will lets users create one-off vinyl records from their song library - Music Ally</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno will lets users create one-off vinyl records from their song library&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Ally&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcG9naHlNYmprWU84SEFQNTl0MXp2VHJ5bFJJOW96X0tBN3JnemlmSFdvVFV6Zk5YdG5jb09xN0N3a0ZRc05fVUVBRXgxTFVkOE53UmltNUVXOXVwTDh6TEtVMGIxOXFua1Q2ejlnZEgwV0pmcW9XMk9abTU3VWVXaGZuaS1SSE96d0xLekl6MEwyTmJKb2pLakdvNklXRGdSWGFFdHR6V0N2TUJwWEFaM2ljZm4zUGlxM19zcXFYbVlxOW1lRUpaSEFMazRRR2tVWnFvQS1scDg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno shares principles for 'responsible AI' as it adopts Musixmatch's copyright detection service - MusicWeek.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno shares principles for 'responsible AI' as it adopts Musixmatch's copyright detection service&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;MusicWeek.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQM2E1a0VPRW5tR2dfZGJIaWVNeFl4bjZnRmM5OGxHaEJHeGVYU0xkanRtUk04ak5iLVdjcDRscGlIWHIxdlYzMXZHZkdIRmV6SUdUdjBkUWg2Q0EzWUFLdklXdVBSdmhNdjBBR1NGSkNUQzdjc0plWEFHXzV2RnpiWjFpYTN6VU1VLUE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Shares Plan to Limit AI Song Downloads, Details ‘Principles’: ‘AI Should Enable Originality, Not Imitation’ - Billboard</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Shares Plan to Limit AI Song Downloads, Details ‘Principles’: ‘AI Should Enable Originality, Not Imitation’&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Billboard&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxOOVlRVDFseWZUM2RRSzcwdV9HVkpMUjF6MUh6dkNrd1FNakw4MzVDSE16YVAycUliU016ME5IcGo3N0pXbmtVMHJRSkdMOGk3N2Q0ZTlSalotZ3FfbTJ3dGV3S1hFMlpOb3FSTG1oOGt3WFZpMElSUUstSnVRU3ZlLUhRVDRIZGRvQlBQSGxJLW84YVYtU1pvMlBTQzlTQTVwWDJwNzFzNVNJakJrbnNZTDBBNWlqMzdkaUhCTWdXU0Y5QzlROHlHR1RyRzZVcjRGM3NQelRvMkVLYjA0YURZdHlzeGZJdw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno is now letting users press their AI music slop to vinyl, thus alienating streaming services, artists and audiophiles - TechRadar</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno is now letting users press their AI music slop to vinyl, thus alienating streaming services, artists and audiophiles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TechRadar&lt;/font...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi0gJBVV95cUxPQXFoUktkRlNsWEN3NXZRS2hVX1lkV3JsZWpIZnhSbE9pa1pNSjZSNWtmRS1Lc05ZUTMtRFdkZzZRVWotc19TRWx0RjV5UlZMNjJscy1RYnpHX3lzRFdXMXhpSktaWmxEakpFN0tXSkJETXNnQ2I2NjJ0MkFQU2pkN290RDNGZ09MYmxuRlkyelptVEVBakVaMEZwVG1JLTFyMjdadXVoQWtvbkJOMm5sNGV4ZVk3QmQzNkI1S24xeHdwY3pSVUVCRGg0SmRNNEpUOHFFMXczVFQ0RzV3NzJ5eW9ITFJfWWoycExFcnJ6WV9BVDc0MHp0UUl3SzltQlFlVmFwMDdZVkVuOXV0VmRzM2ZVb2lUNUxBMkFTY0w0OV8wRHZacjg4UlUzUVBvQ0NCaG1UMGVsSUpONlA3dWQ0NDdVWUJ4bUpyRDJxdTVySUhFdw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>“It feels like the most ‘us’ thing we’ve ever done – Suno isn’t coming up with that anytime soon”: Sylvan Esso on the making of Ow ∞, their self-built Betty's studio and why they pulled their music from Spotify - MusicRadar</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;“It feels like the most ‘us’ thing we’ve ever done – Suno isn’t coming up with that anytime soon”: Sylvan Esso on the making of Ow ∞, their self-built Betty's studio and why ...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5VZ3cydkFXMHJ0Y1BPM3VxMjBFR204WjdZajNzTU5OYjB2SDBhTEg3ZG9tZWVBTmpsX3gwSkpuRmpEWXNNOEpGT3RXZHg2YnBkWU5nOUdObDkzM1ZwazdEUHo1NW05QVFPaXlFTUZJOFZKUnBmVFVvUTBSNHoxdUk?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Federal Judge Rejects ‘Woulard v. Udio’ Dismissal Request, Transfers the Class Action Suit to New York - Digital Music News</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Federal Judge Rejects ‘Woulard v. Udio’ Dismissal Request, Transfers the Class Action Suit to New York&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Digital Music News&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9KSFYzd25ma3pZSk5TdVgyVEpEVng1TkV3Y1RSaGtWZVpfODFaU3pndlFrR0txQnN6Tm9XelZiVU9LLTJONVc1YnQ3eW9qTkdTaEpTSEpWTFJtWGEyd2g5V3BzeTI5b2ZsdDVwSG9R?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno AI Loses Landmark GEMA Lawsuit Over Music Copyright - Hit Channel</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno AI Loses Landmark GEMA Lawsuit Over Music Copyright&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Hit Channel&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPNjBMYWFjd3VmXzdxaG96SEFqcHh4MS1PUkRKS2tLNEFBOGtWQ0NkMkJxTGU5YjlDVzQ0a1BMRGtQeFh5NV9ydDVhdmJFS0VqZm5xTWt2azVqRzM3My1CbF9sS25vQzhiTks0czNPNndyMGNyODNxaHZOM3R2TU1rbDhYNjJRU0kzcGk1MjhNZ2czSHREOVFjYk90c3RDeVNlLWF3ekc0TzUwZG9ybGVZ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UMG asks court to dismiss US musicians’ union lawsuit over Udio AI deal - Music Business Worldwide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UMG asks court to dismiss US musicians’ union lawsuit over Udio AI deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Business Worldwide&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPZVNLQWVHMjVta1E4ZzlXcEd5a19rUGNzZkdKdDJjcllRak1EcHZkT3pCSVdSN3EtZVRMM28wYV9OMG05aWxPa0RCdEJXcUljR1NBejdFdk5qZ21wU2E2Uy1VMFdWMkdnMWxLQk9xaHJHSThnSzR3Y2dESWZkdFM2a0E3VU83b2hKQVJUM00wSXJKdnJZQ2hKRTBrSEVoZw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AI Company Suno Loses Case to German Performing Rights Society GEMA - The Violin Channel</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AI Company Suno Loses Case to German Performing Rights Society GEMA&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Violin Channel&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxNanhSWGp3M3RFRHZ5UUdlN2RmZzdUcEJpaThvRXFpVHd3MmVjeWd1UnZvc2lpMU01ZUdsTHI3UEFPQTdJaW5XSmhscl9ZemZFR1NDX2RCVWg5SkdURGstMGFkV3U4TmdOVGpleGMxT3lTTmI4UlMzOHVLcHVJQ0ExeHBReVZaTXFaakZ0Wi14d3lIT2M3TjdzR2RQQVp5c29TTWN6VHJZQXBiaGdhOGVMN01MNGUweTBfR214ZHNwOVZBT0pPV1ZJTlBIUzJCMkc3VWJVZm11UXRic1FnV0M2R2NiQ2dxaHl6UVFUTVgxSVJIQVBGWDVkZ2tB?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Court declines to dismiss independent artists’ copyright class action against Udio – but moves the case from Illinois to New York - Music Business Worldwide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Court declines to dismiss independent artists’ copyright class action against Udio – but moves the case from Illinois to New York&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music B...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNTzg4S1ZJQ3N4TVoyelFEc2gzekg3YmJZRzBycjctc0puS3pGODlySEhvMEYwZjFkaExwRjNhaE9GRjZmSFhLSGYtM2JGNDNoNURfR1Z2SGszN1ZoWk1nZ3JHTlU1YmRxaWk5MW1PQjlQbUpITGRuNGI0bUQ4M3BTWkVYdTRfdw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AI Song Maker Suno Takes 12K SF at 515 West 20th Street - Commercial Observer</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AI Song Maker Suno Takes 12K SF at 515 West 20th Street&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Commercial Observer&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimgJBVV95cUxPMngtVGpma0J3ekxhOWN0bmpKOEU5NXZJXzVocnBzbzhBR2F3M0IxTzdUeHBYbDRHaklVM2paSklYczFTLXZFbXVUM2dEdnUtd25NNHZxc1RDWEFza3BTcjd6R3VBXzRlUFhRaXpRVnh5MzZCT0lkSlJkdmExdUVUWHVlaWxtMDJjdGx5eEJzamp2c0FacUN6cEVwQmpVWGc1d2E0amZSakxZY1ZSUUhNX2tMVTlJR2V1OUNWYUp4d1R3YTNSbXFWbE9tTnFLQmVMNHdVcGwxb0F1WWUza1dmcnhEZG9WZjdYRENxVGdKc21oNDhIdHJreFZZTW1Ha3ZBd3lBUEV2ejVyRUxUR1BsamxlZVZIc0czWmc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>“AI models built on stolen intellectual property have no protection under the law”: German performing rights society wins significant victory over Suno - MusicRadar</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;“AI models built on stolen intellectual property have no protection under the law”: German performing rights society wins significant victory over Suno&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font c...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNQ1FDRnFFcnNOT3ctaTZadGZGT3F4SjhNSkROTEF3bHYwRzVuZkM0R0twWFlWMlpPelUwZkxnZm1kTWRXNkI0QmZFLVM5dTQxQUdkS1lhdldOVVFGUzhzejBtSnpLako0YjJtSV84SjI2N200aHV0eWtaRjZ2aE1NTnZ3MjVvRVpiZVhoOG5faFZmeFB3M1BrZ000NWFoOXJlUW9NR0tPMmVOWm1seElmczBic0xVN1hEYWpMRg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Loses Copyright Lawsuit To GEMA—AI Music Companies Should Worry - Forbes</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Loses Copyright Lawsuit To GEMA—AI Music Companies Should Worry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Forbes&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQY2M4YUFfMFlWN1hCelhvT210M2g2eXNZSUtTMGJscEpKaFBreWV1dmhzeEZSMV9RUGZrZDBfWHBaSWZjMl9wZDFjVXNxdUkwU3VtRFhhbUUtUE5fNEo0UXlrMGp3NlBhR1g5ZURHZ1otZXFUS2tNTFUzTEJDejlCZw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>The verdict is in: Suno can’t legally steal your music - Paste Magazine</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;The verdict is in: Suno can’t legally steal your music&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Paste Magazine&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxQd2ZqSVczNXhzLTYxc013Nm13OHFqcm51VEJkSTlXQnRDZlJ2b2RfR2dzTy1pYnE3emxKRFVXNTlUYndmQXZFaHlEbzZhQnVVUDBFdksweHlENHNKaEdib21jeFlMZlJwaHVkaGd3dnVXS0t0RHRkVzUwc0RUVXRwQVBnb1Zza2ZKMHlXRVpqY3BqYWNYc005MmhBT3picUgwQ3Vxb1RYWWw4ZDVDZ3NwY3Z1RG1jd0J1WUIzczIzcnh5d1lQcy1lcURZRmdZbmNLVF9CQlNQRG5JeEV3LUtqWEM5Uml2eGc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Five things to know about Suno’s data breach – and the hack that exposed how the AI music company trains its models - Music Business Worldwide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Five things to know about Suno’s data breach – and the hack that exposed how the AI music company trains its models&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Business Worldw...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQUk5yVjF0ZHdJNzJXMFN5VmY4a2JSbGVLSHBxT0JTOVJEWU90cWwtLUxjbW13VWlOSmFmQkN2N0hfU2h0MXd1Ym8tRElzd1UyZlNJQkhuQzVEZ3BPY2YyQnVQOTJhT0lPYW16SFZRNGFJTnVTN0pjUjdXVF9XSmR2SmtVSW8xbXBDd0Q1YWlkOHJnbWswZHFCY19IMHlBdEVJa1RLcjFUNVR1eER3S05LS3NWWkJGOEVxZmhpREFVOWU3OE1YYWhjbWROTjZvbGc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>'Stolen intellectual property': German court rules AI music generator Suno broke copyright rules - Euronews</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;'Stolen intellectual property': German court rules AI music generator Suno broke copyright rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Euronews&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5BTU1CdjBjczNyMk1OZ1Ztd19RdTM1cTZDbzQ2VFJEdE95MjRxTmpwSV82Uk5IV1lweTE3dWVZMXpkOXhhOG5LcXllajhVMWg5cFFfTmtOR0Y4SmxLQWw5V0pJeTZCNXpjd3BMNg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>GEMA wins copyright lawsuit against Suno in major AI music ruling - RouteNote</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;GEMA wins copyright lawsuit against Suno in major AI music ruling&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;RouteNote&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNaG00dGRkTXY4YnFmdVo2dGF5Y09NOHJycFZsODFVcEZtOWZ2RS1lV3ZZOGNNME5NTnF4NEdOUXg3MUN4VFlpQ0JvNlBRYmtkSjJEdFZROFZxeU05Y0VzQmthLVJMRDlodE1VN1VWT09tR1FlTVhnZ1gycTd6bThLQXUyQ3dNaXlNaGZQM0thdkJjYnlMUk5oU1RNOS1aT2RlWU9Dd1VpOEZ2MkdkaHlhRW9mNF9JNHgyS0Y4VV9faFpMekd6Tll6WUNvem0?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>A pressing matter: Suno to launch its own bespoke vinyl pressing and shipping service - MusicRadar</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;A pressing matter: Suno to launch its own bespoke vinyl pressing and shipping service&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;MusicRadar&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="cat-section" data-cat="3D-AI &amp; Modeller">
+            <div class="cat-header">
+                <h2>🎨 3D-AI &amp; Modeller</h2>
+                <span class="count">2</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNT21vUUFXQ3hfbXV0cFRneDVjYnVtRWlqT1dicC00LWpVMnNjVXlvVUh2cFRRQUJrZDY0TzZ1QUZzcHRCVXRHTmhvbm5LbXJkbjFEc2VETllWa3ZFblhVZHhkU1RKTjFKb000VXQxdUZ3S2p5Znd5RlpBT3kydld3ZFhJQUlMaWFZdHNHVVplcjF0QmYzQlQ3ZUZPWGZLQQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>OutLangSplat: 3D Language Gaussian Splatting for UAV Outdoor Scenes - GameDev.net</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;OutLangSplat: 3D Language Gaussian Splatting for UAV Outdoor Scenes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;GameDev.net&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxQb0FueWFDMHUzcGhpMEhOODBKXzlOb2VnYUhTX2R4czNUU1RocmNCaldtWWE0eFZWRmV1N2dpX2J3MVd1WlB6dnJPNzhuQkc1enJWcWpERE1sM1labHhpeW42ZmxBZDRpdURENHJpMXpENUFZeWEtYnE3ZEk4SDNkcDVtMWdIa05pMnFnOGhHY1NBTWJqNk94QVJRTTU2R0ZrOVN1ZDV2aXVSQ1cwVC1oTnl6b1hXU01LenBfSXF5V2NxWXdhbUhwc2tCaXNISkFzV1NfX29B?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Creality's Pika Puts a Dual-Mode Laser/NIR 3D Scanner in Your Pocket — With Gaussian Splatting Soon - Hackster.io</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Creality's Pika Puts a Dual-Mode Laser/NIR 3D Scanner in Your Pocket — With Gaussian Splatting Soon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Hackster.io&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="cat-section" data-cat="Blender + AI">
+            <div class="cat-header">
+                <h2>🧊 Blender + AI</h2>
+                <span class="count">1</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPWnNrN2NERmNVOUdHWTA4aHkxMW5UVTFWNG9uZF9qcmNWTXJuU20zTU5IdTZJNkRiZDlvdkRPZ1o0TXgxMGZaMDFKRlNKVERqNUdCYWlWd3QtcjZVbnFibC1xMG1fWFZKcXNsOGZWRFd4WW9QbXpnUTgxZHB6cWwyQVhndno2cE5tanZDenc1TnpBN2FuLWVTalo5WVhZaEhsNHh1VjRn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>For Cuisinart, AI-Generated Ads Are As Handy As A Kitchen Blender - AdExchanger</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;For Cuisinart, AI-Generated Ads Are As Handy As A Kitchen Blender&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;AdExchanger&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            🤖 AI-sammanfattning av <a href="https://github.com/steffost/ai-news-daily">Oris News Bot</a> ·
+            51 träffar från 6 källor
+            <br><br>
+            <a href="https://steffost.github.io/ai-news-daily/">← Föregående dagar</a>
+        </footer>
+    </div>
+</body>
+</html>
