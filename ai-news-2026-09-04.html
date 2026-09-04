@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Daily — 2026-09-04</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --cyan: #00d9ff;
+            --gold: #ffb800;
+            --magenta: #ff0080;
+            --green: #00ff88;
+            --purple: #9d4edd;
+            --dark-bg: #050510;
+            --panel-bg: #0d0d1f;
+            --card-bg: #14142a;
+            --border: rgba(0, 217, 255, 0.15);
+            --text: #e8e8f0;
+            --text-dim: #8a8aa3;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 20% 0%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(157, 78, 221, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 184, 0, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 30px; }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid var(--cyan);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cyan), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+        .date {
+            color: var(--cyan);
+            font-size: 0.85rem;
+            margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 1px;
+        }
+
+        .editorial {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.06), rgba(255, 184, 0, 0.04));
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 40px 50px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .editorial-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--gold);
+            color: var(--dark-bg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .intro {
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .analyses {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .analysis-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--cyan);
+            border-radius: 8px;
+            padding: 24px 30px;
+            transition: all 0.2s ease;
+        }
+        .analysis-card:hover {
+            border-left-color: var(--gold);
+            transform: translateX(4px);
+        }
+        .analysis-card h3 {
+            color: var(--cyan);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .analysis-card p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 50px 0 30px 0;
+            text-align: center;
+        }
+
+        .cat-section {
+            margin-bottom: 50px;
+        }
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border);
+        }
+        .cat-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+        .count {
+            background: var(--cyan);
+            color: var(--dark-bg);
+            padding: 3px 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            border-radius: 100px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .news-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        .news-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.1);
+        }
+        .news-link {
+            display: block;
+            padding: 22px 24px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .news-link h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+        .news-link:hover h3 { color: var(--cyan); }
+        .summary {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .read-more {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s;
+        }
+        .news-link:hover .read-more { transform: translateX(4px); }
+
+        .empty {
+            text-align: center;
+            color: var(--text-dim);
+            padding: 60px 20px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">AI NEWS DAILY</div>
+            <h1>📡 Dagens AI-nyheter</h1>
+            <div class="subtitle">Redaktionell sammanfattning av AI-världen</div>
+            <div class="date">fredag 4 september 2026</div>
+        </header>
+
+
+        <div class="editorial">
+            <div class="editorial-tag">📝 REDAKTIONELLT</div>
+            <h2 class="headline">Lokal AI tar kvarteret – men musikbranschen slår tillbaka mot generativa modeller</h2>
+            <p class="intro">Dagen domineras av två tydliga motrörelser: edge-AI flyttar allt mer kapacitet från molnet till konsumentens egna enheter, samtidigt som rättsliga och upphovsrättsliga konflikter kring generativ musik-AI intensifieras. Bilden är tydligare än på länge – vem som äger modellen, och vem som äder innehållet, är årets hetaste frågor.</p>
+        </div>
+        <div class="analyses">
+        <div class="analysis-card">
+            <h3>🖥️ Lokal AI</h3>
+            <p>Lokal AI går från nisch till infrastruktur. Samsungs och Arms 2nm-satsning tillsammans med en påstådd OpenAI-order signalerar att molnjättar nu ser on-device som ett komplementärt distributionslager, inte en konkurrent. Qualcomm breddar plattformen mot industriell IoT och Adreno GPU:er, medan UGREEN och Nvidias RTX-optimeringar visar att konsumentklassade enheter på allvar börjar rymma 24GB-modeller med 1,9x hastighetsvinst. Sammantaget pekar utvecklingen mot en fragmentering där 'edge' inte längre betyder avskalad mobil-AI, utan fullskalig inferens i hemmet och på arbetsplatsen.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🎵 Musik-AI</h3>
+            <p>Den kreativa sektorn befinner sig i en öppen konflikt med de generativa plattformarna. Suno tvingades backa från en Mary J. Blige-kampanj och möter nu en grupptalan från SOCAN, samtidigt som en Texas-bluesmusiker ansluter till liknande stämningar – det rör sig alltså bortom enstaka kändisfall mot en bredare juridisk konsolidering. I motsatt riktning trycker Google ut Lyria 3.5 till hela Gemini-användarbasen, vilket snabbar på normaliseringen av AI-genererad musik. Spänningen mellan gratis tillgång och upphovsrätt har aldrig varit mer akut, och regulatorer lär snart tvingas välja sida.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🎮 Unreal + AI</h3>
+            <p>Qualcomms Adreno Neural Fusion är den första tydliga signalen att AI-acceleration blir ett förstklassigt GPU-medborgare, inte en separat NPU. Att Unity och Unreal redan är onboard visar att spel- och simuleringsmotorer prioriterar neural rendering och procedural generering i mobilklassen – något som tidigare varit förbehållet diskreta grafikkort. För Mr. Splendid och andra världsbyggare innebär det att Ombra Prime-terräng kan renderas och AI-fieras direkt på enheten, utan molnberoende.</p>
+        </div>
+</div>
+
+<h2 class="section-title">📰 Alla nyheter</h2>
+        <section class="cat-section" data-cat="Lokal AI">
+            <div class="cat-header">
+                <h2>🖥️ Lokal AI</h2>
+                <span class="count">59</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxONzRtX0JDNnc4TXN2MGZuTTQ3eWdwVm92bXUyTW12RkdCZGc4YXJ0SUZnS1ZuOXJfYU5OT0xialRKOTMtdFgzbHpJcWdSSkh6RzlYQ1hmUjdvR0h6WHdCNXBoVkJlNXZpblVpRmpKazZYNHlWNUhtdUpLY1J5OFJMbWZyQ3U0Q2l3NDRxaXQ0bEw0S2FqSG5xWnNpVnJ0N25XVjA5QmRUUnhYbHA5Y2l3YTZIclpfZ2Z0N2hkVDZfcURDMVU?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Samsung Teams Up With Arm to Develop 2nm On-Device AI Custom Chips, OpenAI Reportedly a Key Customer - TradingKey</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Samsung Teams Up With Arm to Develop 2nm On-Device AI Custom Chips, OpenAI Reportedly a Key Customer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TradingKey&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNczIzRmQ0Y0E0T2NtZWZlZEhkVFBrci1fZU5wUVZCc25zbEpITmNWN3BWX0xBR1JDcGhtaVJLbHZ2dEVoMi14Ylo1RjhubnY2cFJvakpDSXNfOVVNTDhtOXgzX3BhaWgzQ05QcTFzSzRVakUzRjljMnU2RE90ek9ObVB2VXRoNms3cFRHYThyZHJoQmYxcVFPYnowY0t4Y093dm5RbmZuUzlmY1VCU2tNYzc5aU4xajBGMVJvU2c0bmc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Qualcomm Dragonwing Q-2390 and IQ-2390 Bring Local AI to Industrial IoT at IFA - techtimes.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Qualcomm Dragonwing Q-2390 and IQ-2390 Bring Local AI to Industrial IoT at IFA&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;techtimes.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPM3d6eWdHejQ1ZlR2TU5yYzd3aWItYmJualZMY2FjLTNNeHNSaXRHTkVFOVZWeDVxWmFlRXFrQW0zZDdmMXBodzlnT09zSXZTMy1vZDdDMVVNQ2tZYm5MVmhOcjNPSzI1Z3pNbTFZaHVKRE9ZMkdTeTh5QzVNLW9vZTZnRHpJTmFuaUVfWFZmblY2dHBVeUh0eHdqN0MwM2s?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UGREEN unveils HomeAgent local AI hubs with Linux and Nvidia hardware - Neowin</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UGREEN unveils HomeAgent local AI hubs with Linux and Nvidia hardware&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Neowin&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1vcnRYOTNvZFFXN0g2YUdJWjVzcmM0ZkJCUktXaXJLQnVhV3pPb0pFOUJEQ3V5RzV1Qm9PM3NtSDdubV9MSTczejFlUVJxN08tQzYxUDlVMDFfVUFsdVpfQms4MTRsWTVVeWY4Z1VVa2xvUkJSbEE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Local AI Hits 24GB+ RTX GPUs, Speeds Up 1.9x [2026] - shattered.io</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Local AI Hits 24GB+ RTX GPUs, Speeds Up 1.9x [2026]&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;shattered.io&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOOEU5a25kOC1EcUFYVWplOWlKT3JvNGJUVHVSR1J6bUFBZU4xa0dXQ3Q5ajdFcEhHbm9IaUNvZU9GbDJUa001bHZVU0wxQ0R3YlVUcTZXRlYwbVc0TzlYQ3ZqN1Z2MlBJNFVDNURmSDNOeGFCWjhYZEZWc0p5azJyb2xJdUg2cENreU1EeEd5aFVtVzl2bnF3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia just turned your gaming PC into a local AI supercomputer - tech.sportskeeda.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia just turned your gaming PC into a local AI supercomputer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tech.sportskeeda.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiugJBVV95cUxQYnNEdnVSLVVFd3B1cndwck1zRjJ5SFR4UFpkdW9oclFOTDIzU3dQclI1RUpMYnpoTGVZcUxIQnRtNC1LakRoMU9VWGwzMXZmWlFTbVBfRTJKR09FVDU0ZWpuM3NxcU0yNGNQdXJ4bUY1TUMzUjVzS0JIUWVoQmF2b3U3VGNNd1FWX0ZFeU03N2MtZkhVYzZlVWdzNmRlc1BkYXBaVnQ2TFltUU1YVDVJTWpvUDlUcjFySXFWVzZ0anNkaGhnaDJMazcwX19NWExRT01tY3d1ejlnYXJRUGNOaG5QOXYzdWYxdVBzVE5Tb1ZUcElEOHVrSFlhWnFwYWFOTWdzeE9TcUtpc0otOXJCamp2UWlybGxJTTRYcjhUdy1FNHhSaGJ4dVp0aGx6ZVFzWmtwUG1RTDVzUQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Minisforum launches local AI solutions at IFA 2026 — AI Agent NAS N5 and AI Mini Workstation MS-S1 use AMD Ryzen AI Max+ Pro 495 processors designed to run models locally - Tom's Hardware</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Minisforum launches local AI solutions at IFA 2026 — AI Agent NAS N5 and AI Mini Workstation MS-S1 use AMD Ryzen AI Max+ Pro 495 processors designed to run models locally&lt;/a&gt;...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE9JSGJYbTc2NHNabThYQnY2RXNDcnhYZmpBbnNHeXlwakx1WmUwU19QRW5jVkJpa1dXX3Z1eDRRaXlnSlIxUGI0bFMweHlvaXg3a2xYc2RTanFla3M?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Open Models Now Handle 80-90% of Enterprise AI Tokens, Ollama's Jeffrey Morgan Says - finance.biggo.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Open Models Now Handle 80-90% of Enterprise AI Tokens, Ollama's Jeffrey Morgan Says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;finance.biggo.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBsOEZQdTg2cFBjUDJsQ3BXRmZzd2tfTGJnMnRyRFgxSVdNVXJGUGpiVzhTRU9ubzZ5NU5VSGJyTFhfYWxXeFEzQW1IRWNTUDhTZElPQVZoV1hHWkF3NEFPUjB5aURRc0FFOHlaVWRUbzRHUXZsZzdZRE9n?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Local AI: 24GB VRAM Cards Rival $20 AI Plans - tech-insider.org</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Local AI: 24GB VRAM Cards Rival $20 AI Plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tech-insider.org&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE1SM0JlbEdtYS1DVDAtRlhEMjBzb3Y3b0lIaUR3U2lNVkVpbWNhU0pjcFNLbzk0d25hWGZWdmxsVWhzWUJ5ZEtmVUhIRGVOaGtVS1Jfa19EeFlHTFlDMTFHVUtTWmJBd0hEOW15YThsRlJyOGV5aTNIa251NEw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Local AI Push: 24GB VRAM GPUs Get 1.9x Boost [2026] - tech-insider.org</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Local AI Push: 24GB VRAM GPUs Get 1.9x Boost [2026]&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tech-insider.org&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQNlBLUkJzREZURGE1ZGFFWUNKRXRLVjlYSW10ZnB0TjNYY09UUURKV3RhdXNXWHdOOGVyNkRGTkZfQUdhcXliU2JHdHhkS19QR0prU0NZaGdvUW01LUE2ZjdNTW9BSnprdmhhUmcyRGo2cTI0WWR3bkkxeGRPUlVpNQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia &amp;amp; Microsoft push local AI agents on Windows - IT Brief Asia</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia &amp; Microsoft push local AI agents on Windows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;IT Brief Asia&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBlbEpudm02Z0MtMkZGcmNsMG5CVkZaX1lwUmVodXNSVjJMQi1NUm10RUJVdVRoRGZQbEtBZ3R1MEQ2Y1JsbVlTemFqdnkyN0ZTNDM2VDNxdjdjMkVDZUhmX3VPU29ZMzF3U1E?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AMD Threadripper Halo Station targets local AI models - tbreak.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AMD Threadripper Halo Station targets local AI models&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tbreak.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxORkVMSEYyTFhydXhWVWpTb29uZVBVYUxKaFh2Y05yWjB5WTBMZHdOY2dwZWhaWWdPRGpycnpmMGw2cDNIQWw5YkNGenJuSUxYbGR2LTcxUUNWeWQzOS13U0ltcjVWVWh4OFRFSl9uNEE1T0hka0dLclRoMzhLcXFRcWdmQkVWa2lMOUh5NHpRTDE2REVS?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Samsung and Arm Join Forces to Enter On-Device AI Market: 2nm Custom Chip Development Underway, OpenAI Poised as Key Customer - 富途牛牛</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Samsung and Arm Join Forces to Enter On-Device AI Market: 2nm Custom Chip Development Underway, OpenAI Poised as Key Customer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;富途牛牛&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOWWZVTW9PWmw3RUJ2dllzeE1IY2thcGpQNjFfeTd5VXJZajVzV0swVndzUUFGSmNHMnA4RG5yX1hnMklQcUU4alpxekItQTQwcDVCRGhYU1cxX1NmTFBTNXppWDlCamR5MENXdVprUzJnUUR4MWZZdGdIcEV0cHEwX3VxSlJlOEFZM0JJd0ZvVHhyTG1z0gGaAUFVX3lxTE5GUlVySkhTejAxOFpxZlBvMDRnajZ4R3E0NjVUQXFpY1NSaUs1MVRpdVpkbGpVS3haX1ZMdFRkUG8xdDQwWFdOTGROc0x4Vm1zcHFKVGpISHFETlZkbDliY3lmeE9IV2xVMlM1TnVzR1pYNjJkLVVXSGNMYXVQNW9KMTVpbmR0elVZMTdhTzlrNDJISWFHUGR3cVE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>IFA 2026: Lenovo unveils new ThinkBook laptops and ThinkCentre desktops with local AI - 91mobiles.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;IFA 2026: Lenovo unveils new ThinkBook laptops and ThinkCentre desktops with local AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;91mobiles.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPVlRINHJHTTBnOTdkZkp6dldZcUNob2tjNndlbUlzNGtoZTNuaVdndjB6ZlVyazBicFRsRzRlSVZSYkthcHFwb0pqeXptZlF1TzFjdElXejB4eDBxNHBGWnlvRDFFX1Z3ZWp0R29uNkF0NVJ0cGloUHRSU21mRDk5Q2lCTVpQdGozSzlPRVpuYWpyd01KWm1LNXVqUTBweWdzNnRJVmpna3hWNTBIdDQtTDNzc9IBuAFBVV95cUxObHRaWkdSZXJaZ0JyU19zY005T2lJaGgwVGVqbXZqSVB3eXlOcVRXQlp0UlFuTFBBbWRWa1owZ0M4R1lCQ21hWC1CSlVCWno5eGlQWWZsZXUweFBLakVJSlpYTG9sX0pDVXFPbThpcnhNcjVQMVBUVmdlMDAyS0o1SEw3SUhSOTRsN3puY1N0NDRaandfLUlUMW1CdUE5LWtLb1pHOW5GNTFXakJhaXo1eHJWVG1CMzM4?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>IFA 2026: Nvidia RTX Spark PCs, Local AI Tools Announced With October Launch Planned - Gadgets 360</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;IFA 2026: Nvidia RTX Spark PCs, Local AI Tools Announced With October Launch Planned&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Gadgets 360&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMUdyMngxcVJPSjA4T09NYzBUMi1oLU9WdUJ3bGpIbXJ3TGJ6aF9VYy1QVnNMcldDLUJtQ3JJU3BPQ3FKMXZpa1dtaWI5Vy1kMGlDd01XekVrRF90LTJYQlk5LURFQWJaLUxWQy1oMXVJUG5UTnZ4YkVvQ1lpbnNGTkg3Tm9YM2RZNEphUWN3TlF2TzJtbTRsRVZRMUZQYVJTNWNDNFVna0c0Rmh2LXF6T1FmU19NV192QW9KT2RzRU5UTVE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>On-Device AI and AI Mind Space offer a glimpse into the future of smartphone use - Notebookcheck</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;On-Device AI and AI Mind Space offer a glimpse into the future of smartphone use&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Notebookcheck&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOSEZ1QjR5S1dTMW5mOFRTTnJQZXFERTQ3Wjc4dkE3UWFnZHZjNFh0RWxwRmUwUHdFeUROU1NvU0JkZ01FV201UHVDZEdOMm5FVk1hdlBTd1lmMEhfXzh6N3FpT010V3VpbVZrRTFzcFBQdEJCM2ZqVGp6WjJnVWNVNTJJUkxLTGpFV1B0Qnd6VHRWX0JjS3phVldKOFFqd19pLVYwTHZkYkx1Z2lMYk9fT295dl94QXVsQTVKbHdyNnR1TWozZGJKV2d5TDN1Zw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AMD Launches Threadripper Halo Station at IFA, Targets Trillion-Parameter Local AI - techtimes.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AMD Launches Threadripper Halo Station at IFA, Targets Trillion-Parameter Local AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;techtimes.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPd0xreGx1WGJwN0hZemJxV21ja1BYaGx4Sy1HZHlZRzE4Mk8tRUZNMnh1dThTREY3eExyeXRKZXdVM3daNUVvM29CNkhuNG4xekE1RW5yd0paMUhFUFFvOVktdVh4Ymc2bDNPNlZBcFNUQnFNRFQzWmZRTmx0bFltVWxoNG96N1FFdGhLNGxOX1VzbU5mcmw3YlBBZHNmdExIQ2p4YjBUQ1FTazMwb3g3cXByWkFJTVNRYWxrdVNrUzhrQjAtYmtma0xjM0RsTlFkNGoySEFDYU10ZGpN?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Samsung Electronics Partners with Arm to Develop Next-Generation On-Device AI Chips; Arm Rises Over 2% Pre-Market - TradingKey</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Samsung Electronics Partners with Arm to Develop Next-Generation On-Device AI Chips; Arm Rises Over 2% Pre-Market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TradingKey&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1KRks2dmpuVDQ0NXBNeVdUNmwyanR6VjV1Xy1kdUJUMmVxMnJzd0F3ZFlKSTgxLUJqSGJmdHBmX1NrSGhVcU9tZWJ0UVhZVURwWTNVeG42MXN6cUlLeDhQdmRpN1BNckw5OWtyODd6TQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA PAIR: local AI cluster for Macs and RTX PCs - tbreak.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA PAIR: local AI cluster for Macs and RTX PCs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;tbreak.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxORjRRSmNyRE9tMWN3S2cxN21KaHBTa1ZCaXJsUDE3cHRGeFpORm9sUTJNLV83bnpBQUlvaTEyVHU5Sm5Lc1BQLUhadEw1M3hoR285OEFXQjlPM29paVAxb2FqbmhSeVRHRjlScnZ6b05DUFZSWU56Z3BYWlpiZDdQbDJoa0xKTUtZQlFnNi16SW84ZDVYZ19YeE1lUWxDRFRnWTlJYnZlQzJxSnBFc2w1ZGRmd2FnaVlNbFE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen launches indoor and outdoor smart cameras powered by local AI hubs - Notebookcheck</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen launches indoor and outdoor smart cameras powered by local AI hubs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Notebookcheck&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQa1lkVndKU2VNZXV3TkFfRUlNUkFnUGpoYklZZ3V2NlN3a1phR2xxQlZfNy1TWl9iZkt5dXYzZTZISnNfX3RnX0h1eXBzU0UyRTEtRVMydkRxOTFodHQ2UDZpek05MnVsYXBHZkMwQmpieENXQXNaWE5HQ1RDOTliN2thdzJpNFhOLVFHRUZaMDlMaXpQdV91Qw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia Expands Local AI Push With RTX Spark PCs, New Tools - moomoo.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia Expands Local AI Push With RTX Spark PCs, New Tools&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;moomoo.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQZ0JjUDU1R1hWUlY3OHhvdTEyQU54RzVCWG44R21wbGJRRFFNT1AxYUZPS09UekZQQW9qV3dzWXIzVjNFT1Q1WTdYZTZEcEo3T1FJN0tRMXVCN2ZGX1BIUlZrYWpjNWZGRmtoU2Z6YUhoY082alFmc0xPN3VfUXJIbkZuajhtaGxVZW1GOGhNdk12dHBpTFpJMTk1Q09nQ0lZUi1iYVZkb0ZTUGxjSzVoOThiT0tzRE1MeThncDVEYVZFRXVwc09JNzln0gHPAUFVX3lxTE0xeUcwbm51aE5zZkliNjlEckFmNUhHVkpqUlNNUU5YNGxQM0lQRjNLdDRjazZZZ2llc0pBbmRHZTVwNHdaMHppRTZnQ2xYVjYwWjRJTjZMYVVjZV9QaGlXb21seW9Rb3g5RnRWdjlfQkFjTDdYeXdCR0hWMG5Za3JQUldpLUd3RkxYM2NNX0RkUm13S1RVZWotMEttZmlmR2xTSzBRcjNvNlc0STQ3aWl2NEdUQUhhRWJ5R1ZlOERlWUlEd3N1MFloRnFZZlAxSQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>IFA 2026: EZVIZ expands its smart home security range, incorporating its own cloud-less on-device AI - EFTM</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;IFA 2026: EZVIZ expands its smart home security range, incorporating its own cloud-less on-device AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;EFTM&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNa19KYVFxRWdEVm8weXZ5MkVkNF8tRXlJV3Awdl9iTHNsTXFmZG5FNUR1bl9vRzhJTmlERTFTLURFMzRYYjZSTDdrd0l5a0pObUxKRUlaRUVXeHQwX3lva2lwdG1INzZGQm9raHQ0VlRtN2ZQU2JBRlhNSjdEeHZJTFJ5YUEzWk5sTnYwNHNJR3B3RGl2a3d1Y0JnZzlVUXN6RXc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia wants your home network to work like a mini data center for local AI - the-decoder.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia wants your home network to work like a mini data center for local AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;the-decoder.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxOQTRxaFVkd3liTzIxamdQZHVwbDlxNzlFYW1XQTZQVTh2U3ZfY1JMTlkyN25iWnhjdEV6c0ZCQmVMYlB3Y2ZLNC1sY2xtMUpzRDJ1eU50SmtmRktFMy1OOFhmd3hZUFBMY0lCRXpwLVh1SkgwQnQtR2Nlazlrb0RsZXN3ZGg3enI5Qy1zaVFkWWRpRmZmV3lIUWJUTFAtZzVBd0dpMERLWVIwSDUwYXIyZkVvWWRNUWRLNV9rVXR2SEM0ZnlHT2g1QUw4dXlZVzFfblBaTGtSUTQwN1nSAeABQVVfeXFMTWxKaDBGTWJoaEV3YjFKTy1fZ3huZHdYWEpDa2FudDBMajBPQ19RT0xVN1BSN0pjYXFaZkZ1NXBLMno4cTI4TWtQM3lrRkk0cU1MZnZYWTBWQUtPQzdJMGppWURjRlE3OVBlYWtPQmlEQndoNkNaRXFRVk9PTGZVZ3IyUFRuN0tzT2RqSkZhS09fblFNYmEzc196NnlYVDlHaVhuUENwSXo4MlREVmp1SjhTMXNvS3VEa3RTVjZHLS1oOW5DcmlGU2txNXR4OGlJTUhBRG4yeUY3S1VsOTZKV2c?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>IFA 2026: Reolink announces a new dual-view smart camera and its own on-device AI for smart detection and ... - EFTM</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;IFA 2026: Reolink announces a new dual-view smart camera and its own on-device AI for smart detection and ...&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;EFTM&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxOWVE5Z3g2bEtDNHJFb29Kc2NZQTBrdDg0S2ZkNFl5UXl1VVh5Y0NQSUJVM3kwc09jdkduUTVwLThEaGoxcVItWlp0TjhNY2ZlT2hneE1WYWNEX3N3UzExQk9GajRkTldiamtDNkRsQ1VVZ1lJX21IeTdtdkNiYWR3M21MYkcxYUJOWXB2WmdBeFh4U2hJNGNnNlFlZE9NZDJoM2pHU004NFc0QWY2VWVjYzhiMHRzdTB3dHdGQ2NBZ1MxQXd2QmdvOXFybW5sVVlEZWxDOVJiZ3p6R05j0gHiAUFVX3lxTFBESnZaczZGRU9pVmJ6dkNzUVNXOTlwaUdRblEzTEhwMHFBTFd6UlAtWUtjLWZEM05sWVdqV0FUV2ZpOFd3ZHg1YWJ4bkExdkY3TVdodlBralJQNVhxYnp4dmZTU3hyWnBtN0VIa1RCdzRYN2Z3VEZJeFZPSlBlOXl1Y0IyQWJoMHNCUC10eUhxQlZxMzBOWXVzWGNBT095U1NWejhEYXpKOEFSZV9ISGt1V05DblE1Q2tKYlVRWlNTUDhEWkxaeHB2bjNfa1U2dXRPdUNlZmtvX1V1OGlVVUJ4OUE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Lenovo, Acer to launch Nvidia RTX Spark-powered Windows PCs in October - Business Standard</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Lenovo, Acer to launch Nvidia RTX Spark-powered Windows PCs in October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Business Standard&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPX1F5QjVrdzRMMUhCSzlZRXJ4Q0N5Y05ZLVNlNTZmSGE3a2ZHV1V6bF9YU21kOExWWFkwdTQ0N3ZXbEx1TkNIUFZaRFVzQlQybk5OZ3ViZVlCSUN6ZDJHOEFtaUhOdkpCQTBORjFya2wzV25tMGtnblcxRXdLVVVhdDdqei00cDlyYVJNR0kyU0s?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen enters the smart home market with local AI-powered HomeAgent and 4K cameras - Cult of Mac</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen enters the smart home market with local AI-powered HomeAgent and 4K cameras&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Cult of Mac&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQcVJNdTdIM1FEdldlb1FJQTJhLUYtdlB5ekdEZjQ0QlY5ZTZuWVFrSFQ3THNxM2Z2SW10VTN3Wm5IYVZUSW5zbjZhUTg2dEp4WjdMRVV1NXMwUnQ1bl9iRUJnVDlBc2JSLUtjV0RXa0VzMW9tck53S1ZDVVJ5b1NMVXNNNUhnZWtCLVlTc1V3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>How Much RAM and VRAM Do You Actually Need for Local AI in 2026? - Memeburn</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;How Much RAM and VRAM Do You Actually Need for Local AI in 2026?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Memeburn&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBfMVAyNVV2R0pYSTJFbW5WNW9XUC1TV0M0NEZfLWVtejMyQjdkRWNvRlRQMHVwX09hdVBZSHlLU0wteGN4WVFSS05TaHdrV2dLWTYtUk5CUzc0VmxCaUYyOHpOX1VDUQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen HomeAgent HA100 Review – Local AI-powered NAS, NVR and Smart Home Hub - Mighty Gadget</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen HomeAgent HA100 Review – Local AI-powered NAS, NVR and Smart Home Hub&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Mighty Gadget&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQUkxHV0xLRDZjVGNIMmw5a29ubU1rNWZPaWhVYTQ1M0k3YTRyQUJvblg0dURWVjVEWHhuMTAyQjA1TTF1WnZtanpGWVNNY1kyMXVXWUJQNVdnNnBSOEZsTl9yT0xSVHlBem04a0h0QVBscVlRdFFudkhReXNyY0dHY0NfemZEcktnNnpTOGdOcmdDSm9RMzVVNGhidlI0WUU?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA accelerates local AI up to 190% on GeForce RTX graphics cards - en.gamegpu.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA accelerates local AI up to 190% on GeForce RTX graphics cards&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;en.gamegpu.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxORS1FejFLMlFmcVRxdjEyb1ZFNFJGUFY5Q3dZUmx3Y3I1R1liS0RYM2dBaC14aF92NTBydmpuVjNnVllFcmk5a1BXazlYd3FsaDRjd1FRdjR3OUctVGg3Mnk2VE10MzRmc29wTFlOckJ4VFNTRjdJV0J6QkRSSmU0dm5aZ3ZaYTg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia sets an October launch for RTX Spark PCs, gives local AI a router - digitimes</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia sets an October launch for RTX Spark PCs, gives local AI a router&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;digitimes&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQT2NyQ21NcWc5NG9Ic25fTS1ka1h6UmcwZENIbEVtQjVhLWw2WlFoRm1oeTNCQTJaOXQtWDlhSVRzLUV5Q0ZRQTdBUkpha2pfcVNJSnI4NUFjTkUyOWZibEJ5MlQtUHVPV3MxNWs2M2cyUFBBYk9Fb3JXN2FnRHhiN2VQVUhZalB0VmZPaWtEYWticlRnaGZMM3VKSGZ3TVgx?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia Details Push To Make Local AI Agents Simpler And Faster At IFA 2026 - SMBtech</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia Details Push To Make Local AI Agents Simpler And Faster At IFA 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;SMBtech&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOVXVPWmx4a19jQ0l0bDBQVjFYVUZRdWJSWHZrSklVTGlfbC1KR2kxcGM3dGdSMlZVaE54TG5HclF1QlY5c0drNmtaVHNXbnJ6LVRud01MNS1WN1c4dlZrRDJmRW1QS0wyYjNFeFNYYVRJbDlvOHZrYkctWXA2cDhOd2p3LWI4Z1HSAYcBQVVfeXFMTlV1T1pseGtfY0NJdGwwUFYxWFVGUXViUlh2a0pJVUxpX2wtSkdpMXBjN3RnUjJWVWhOeExuR3JRdUJWOXNHazZrWlRzV25yei1UbndNTDUtVjdXOHZWa0QyZkVtUEtMMmIzRXhTWGFUSWw5bzh2a2JHLVlwNnA4Tndqdy1iOGdR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UGREEN HomeAgent Brings Local AI to the Smart Home - Tech My Money</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UGREEN HomeAgent Brings Local AI to the Smart Home&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Tech My Money&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOcFB3aXh4TWw3b0NoeUlyLTdDWWhBemVMcXRNaFhCSnZqM1E4NHl5TjhTcG9weDlDSGUwX1hfUkNLTUo2WDFJNzZaM2F5YjRhQWNVdGhHQk9nMkFRLWFxZnRidHc3YVNkMkc2eVZST3Y1QjRlZ09iNXF3TUU5T1VNQmVwUjZJV09ZbEY0ZExOV21vclBMNm1VQ0pvakszYndOVXpTZUFubk5SQXhpMFJ1bA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA (NVDA) Launches Local AI Solutions with RTX Spark and PAI - GuruFocus</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA (NVDA) Launches Local AI Solutions with RTX Spark and PAI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;GuruFocus&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE85bjEwWFhsN0NHRlM2QURhOGViUEZJWHZZRXAyNUFua2xza08wSDV0UGNPTFRZZTZTWWRFZ20yTVVjMDNXNzdYejdkVnU2WmE2dE5jbEVqV2JQZzEwQzJjQ3lvMXVqbEg5SFJQVVo4bmY1X1JJbHFBUVR3V08?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Mac Studio M5 Ultra vs DGX Spark 2026 for Local AI - Memeburn</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Mac Studio M5 Ultra vs DGX Spark 2026 for Local AI&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Memeburn&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPLVMzdkpPdXlnVUVDenVFQ0E5ZVI4T2dKMjZ1QXo2dnN0QU5DVU0wa2NpN0RUQ2ZQSDRHV3EyeWRsNWh6VXlJLUtrVE1LRHlDLTNIejEtQkVBbXVXckNYay1mb2piNGowbV9RRC1laHA0Vl9vdms2MlVVeVI3eXMzMnZVVnpQZ3M?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>The first turnkey local AI-powered smart home hub is here and I'm excited - How-To Geek</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;The first turnkey local AI-powered smart home hub is here and I'm excited&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;How-To Geek&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOdVFjemhPandYSzZXM1MtdEZLMERpd0FyUkxTc0hhaE1lMEpSZ2hEV2cyZkdyVFhUNG9HeHMtQXV0TURWM0FBR0pBWkRTYzZGLW5ybG01RHNZWEVScnZhSXdWWFV5cXZ0VC1sU1ZPTy16OWFyb3BMTEdwMHBZTTN3YzJOcElwaHJVb3gwVkZERUxFUQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen's New Smart Home Ecosystem Is Built Around Local AI Hubs - Engadget</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen's New Smart Home Ecosystem Is Built Around Local AI Hubs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Engadget&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPdWNVVmNhem14SzhGTkhXY29zWUVMYXF3WVBzbnBsdmp1cTRRZHpjWE13R3hIVEhKd2hWbG1WeUZGM092Tm9jTm9tano0RFV3dU5ISURDZ3hIQnZtY0k0aTU4elRGSy1JZ00yUGRVOWh6dFpwbjVfVVJpQjhQdHhlYUx3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen’s ‘HomeAgent’ is a local AI smart home ecosystem for its new line of cameras, more - 9to5Google</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen’s ‘HomeAgent’ is a local AI smart home ecosystem for its new line of cameras, more&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;9to5Google&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxQQ3RCOVdOR2ZLSTZHTDZrdjdZRVk3SjBuZzFfTXJVVmZTdmdwWk5OalhFZ3VLTUphbUN6S3lVV1hiaU9FQWd1N1RmNUxacXJac0NQYzFvTGdlbjVwV0E3d3VfZE16aUsyM1phUVlONzU2ekd0cjNCdE5pVkJjYWRPYkY3VmpGVmF2ejZrZFRJLWhUQmg0Wlc1QnhBYm8tVjZNQmx3dS1PalJiZktvQzdEdlJqc182cjRHNWY2Z2toTlFiYUF0Vmp2UG9KZnJMTTJ4Nm8tcGxWQWVHM0U?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Forget Alexa — UGreen wants you to use its new local AI assistant to control your smart home - Tom's Guide</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Forget Alexa — UGreen wants you to use its new local AI assistant to control your smart home&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Tom's Guide&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNSU9xX04xV0hzekI1cUc1cVd6V0F1STJZVllTU1paY0JwTlZ5WDA1eFRjVThQa1BwaVBjWVhEVWVmLUhienhraHpZejd3czJhYkpVeWtYa1VtOVNWUDFRY0xxMHFCR191N21Gc2loMjYwQTU3aHdtSEk0X0plMkJnQWN5d1YtUHk4Z2YyeFNSeVlveWdHX2JEa045V3hXYWVRVmMw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UGREEN's new local AI NAS is the most well-thought-out smart home product I've ever used - Android Central</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UGREEN's new local AI NAS is the most well-thought-out smart home product I've ever used&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Android Central&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9WSk1rTlk3dENYOFZlS2JBVzFUU2liV21Ya1Z0VjA0WjhJU3JUNHQtQ0pIQ0h1Q1UtLUJTVmY0blJXVFJYMXZrMFBtd3psRDR4QzctT1FsbFY1ekZvR3NIMmdhWnJCU2diRWc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UGREEN HomeAgent, Unveiled: Local AI-Powered Smart AIoT and More - Dong Knows Tech</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UGREEN HomeAgent, Unveiled: Local AI-Powered Smart AIoT and More&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Dong Knows Tech&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQWXZaWWFXbmZyQldNNVh4RVh6aGFTOVk3M0VHUi1HTDQ1WmR1Y1Zjbk9abTlSOXIzLVNrNlQtTzRGcC0yc3dPMk1mVWxEMEZkUHFhX3p1M2k1UzNycE1yOUtNR0c5WVBCenp1X2lPMUZCRHFQZkRVRzBHajAtREtFMw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Ugreen HomeAgent Promises Local AI And Matter Smart Home Control - Yahoo News Canada</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Ugreen HomeAgent Promises Local AI And Matter Smart Home Control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Yahoo News Canada&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNU25yV1lOYXNjNURCdkFWUXkwQVNsWm9SZDFtVUZkcnZhUVBDT1VVeGY5UDRkMGpZUkdFZ0ZLZFBzWkhENXFtLVJOSkNqdEVGeXBXMWlXSk8xb0Z0aWVjSzBMdHU2NUZHeEtNckpCckxOSEpVT29oaWJ1M2wwbnZ6LWc4TUMtajREemx0Tk5oVjJiZXkzLTZ6SjM1T3o2UHNh?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>UGREEN Debuts Local AI Smart Homes and Liquid-Cooled Qi2 Charging - G Style Magazine</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;UGREEN Debuts Local AI Smart Homes and Liquid-Cooled Qi2 Charging&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;G Style Magazine&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNQTc5TVBTV0F0b1JzVXNBM0wyQjI5MWJIemY0LWJsZXI5cDc2T0R2bGcySUFwbEQ4Z2xHbE5uOXUtY0tGb05hSW5oaDBLNnlhazRVZTNmSUQ1aGl6N29pbUd4bWdqV2M3YVFoVWJrSGZJbXZCaGZ4TUMtTGxGSnd5U1VFSGxpQllJYWJKS20yTWdRMUx1ZlBJ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Pushes Into &quot;Local AI&quot;! N1X Device to Launch in October, Home Computing Power Router Debuts - 富途牛牛</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Pushes Into &quot;Local AI&quot;! N1X Device to Launch in October, Home Computing Power Router Debuts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;富途牛牛&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOYzBFMFFUVXFDdE1uTENqVm9lUGJ6Q19CeDFaRk9TSTF2b18welp3QU11SThoZFhIcDRhMUllYTR1M1NjV21TTDBRYUNCeVk5YXZ2Y0ZtNnk0ald2OUN2WUh6Mjh2akVxdnJKdmowenE4eUVSNlBHMl8wLXg0U2ZFLXE1X2tucDN3dVhhMVlWOG42WmRacmpMSG9NUjM?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Intensifies Push for &quot;Local AI&quot;! N1X Device Set to Debut in October as Home Computing Power Router Unveiled - moomoo.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Intensifies Push for &quot;Local AI&quot;! N1X Device Set to Debut in October as Home Computing Power Router Unveiled&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;moomoo.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbG92dXlVY0w4RWp1bHk1bFI5T1V4SXhjd1VRdDFoQVhOOUo2bmpKWmdsdnk5eXpRM0UzZUlIZkxtZFZpeTNSWG5yMW9DQlF6ZVZfVk1XMHlZWFJHYlpJZHN6Y1FrY25QXzAwUVJIejVwLTFoQVVvNVZteXE3SGE0aDd5czRhY1luR1BmZlN0Q015TEFBMnNwOG1DOHdqTl84LXJyZndIa05uUEdYaU43dS1kaEFQWVpySWRac3dfbWhLdw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Lenovo puts Nvidia RTX Spark into its new Yoga Pro laptops for local AI at IFA 2026 - Digital Trends</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Lenovo puts Nvidia RTX Spark into its new Yoga Pro laptops for local AI at IFA 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Digital Trends&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOY2VLYWVJNUZMVlJwYVc1MXNIejgtV25aYmRKYXpFaGFDbU9RNFBvdWJ0TDVoZ1QyR0RyMGFHcXZLVnpIVW13eUhQc0hxejZMbXRZUnpTZkFJQ3pBU0V3RkNzQ09hUVU3ODFTU1BLNDZldTJkLTVMZGFNV2dKVkNBRmsyd1p4YnFqdEQxWUpUSHVvWExfWWJDalFNZWNqR0J0Nk9v?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>M4 Macs can share local AI work with PCs using Nvidia PAIR - AppleInsider</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;M4 Macs can share local AI work with PCs using Nvidia PAIR&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;AppleInsider&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBfbTdoTU1nNVljMmxvT3RkUXNjTTJVR2VKQ2F6QU01eFNZSmV4MnhEckRYYjlRQ3pya0F6d0llUXI1NC1hWU1Ia1Y1YlQxbE90VWJxN2JQNWVwaWJacTZ1VjdXbjVSalBnRzAtNmd4NWFJWkRTdWhPTkFR0gGOAUFVX3lxTE1yTXhXUURaUWtnX3IwcWpEeDR0SlBKaGRtTEZQcXVUUXd3YzlDV1hmUVFXOV9DdTlwVzBHUFJZMkF1WHViUHBZTDB3bWFrT1VNNDM5N2ZlU2tNRW1LTnAwekxpY3RVNC14VUNUSnlRSjZ1X21rT2xOcV9ZOVJ3bm8zTkdFWWVKak01QWNRZXc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia taps idle home PCs for local AI with PAIR, sets October RTX Spark launch - CHOSUNBIZ - Chosunbiz</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia taps idle home PCs for local AI with PAIR, sets October RTX Spark launch - CHOSUNBIZ&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Chosunbiz&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxNbTBHc091UVBIWHpCYy1HeHdrVHFQLTdrNVJBbWFxYkhhNWdrajVWWGpDakczeWhrWDRfUmRsSVRmRmp2bGRLbzhzX0RDZWdVamtocERpdE1SeXdlc2ZRQm81bHE1TnNBQjlXT001Q3RabXY5RmhiVmJvd0FkNDA0MzFaMFFrSTRkTGx5NU85bjR3QkJzTnBNRnoxaGlFc0pGUHJNWHN2MkZBLXdSeW0yV3A3N0NEQTYxZ0NGaC0zYndyeEVVRjVXeGZpTFl4SXZsX2tTMllDXzBsYjJ0OVZid0FaQVM?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>I ran local AI models on my PC without knowing what the acronyms mean, and they save me hundreds on cloud subscriptions - XDA</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;I ran local AI models on my PC without knowing what the acronyms mean, and they save me hundreds on cloud subscriptions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;XDA&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPTGt1Um1SdUM1c1RpM3g4MUw4blc5eHh6ZnVLMGNqYmNTMDEzaGluckNkbnI3MlFwckFqSFR4enNSUUtfNHIzQlZKSGlrcml3S09vM0c4cWN3YzBxMzZtaTVyVVBMYWRBY0NEN3RyYllXMXBHdmJOUXJiQjJEWmFMWVA1aVR2Z2dOSjd0RGNzbFBjejduTWJScU05WWVhTG40N2I1cFE5TzJrRXBOXzNyVA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Anker Launches MindBase Local AI Smart Home Hub At IFA 2026 - Forbes</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Anker Launches MindBase Local AI Smart Home Hub At IFA 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Forbes&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQM0FtcjkyUWhUaW5OQ3IzVFc0elRBSUUzakwwdnhJRndGLTVKT0YtaTNhMURwanRiVFQtNEhybHpzMDg5c1VUX2dfc0xxMEJLUGpJSTVnZDdmNTJTMzg0LUxWdDFheGkwNU5xVVBTb0NNT2dveUliMmRsSWxQQXpKRGVsZFY4cm1jT0RhNmpvdGY3OTJVN0ZpMWczQ3NOR2ZDbFhCc1JsM0ExUjlyRlhUVTgxMXltQkhvdVJv?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network | NVIDIA Technical Blog - NVIDIA Developer</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network | NVIDIA Technical Blog&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;NVIDIA Developer&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOc19tWkhaOGg5NWFFWGN5R0dnVkctSk1OTlQzdlJFeGxyOFdpcDl2VllVZTU3Vl9CeWZLTEkxZ3MtUG9Xam4yeVlvU0wtZTdaWmtUOFppY0ZDdVFWczNNWWVQd1FVM05XS09NZ3diemlBYlNoc0RCcUttaTB4VUozci1qbw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Sparks Fly: NVIDIA Accelerates Local AI at IFA 2026 - NVIDIA Blog</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Sparks Fly: NVIDIA Accelerates Local AI at IFA 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;NVIDIA Blog&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPUWg0T1F5S3FYWUVMUEx3WnQ2SkNMSHpwNURSTU9HZXNGaUtWSE5fZVd6UkNyNGFMVzNxNlhDanI3UUdfZ2ZMeXdHeUNwTGJacndVemIwMDE5RnpxX3FILS1Kd1d6eE93VFNjdHBHSEx4akZPM05lQXU5aTdGbjlacFNrVVZ2c3lfYWfSAY8BQVVfeXFMTkEwT2l6dVZUVm9UbVdXN1pESV9WNEJDdlZfMXY2T3NxVlluV01BNmtibnprcHFUTDZVaF91WHhCcjRnOF9SbFdPZUNFZVIwZmlHTzVKVWpuQlJpS0pKV29JVWZvVzZWMmRaMEZCcnJDQm85YlJWeGhtbkJSWjVxeFNVMkQ2Qm8xUXRhaFNuMXM?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA PAIR Turns Your Idle Home PCs Into A Local AI Cluster, Killing $1,200-Per-Month Cloud API Bills - Wccftech</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA PAIR Turns Your Idle Home PCs Into A Local AI Cluster, Killing $1,200-Per-Month Cloud API Bills&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Wccftech&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSVo1MERrc0VSTXFyNXY2MnExTkRBM0RCbGRsWHNkNUdpTmFEb0JGMGZFODhJbENQTVpFNWxaRWdudjR1LS1vRGg2RHFoZzY2c0gxOHBQNm5VNU1SZWtPekc5YTF4RzJ6emxwbEJUZi1yczZSeTctcWwtcDNZc0ZtQUtqOXVlWThhZVp5RmZqOUZqMG9DbDkxSnRMMlE1UkZ0ekd4MFh6cW7SAa4BQVVfeXFMTVNQSTlTMXo0VVRFUDFMOHhzSzdmTW5DVGhqNkVJSlI5WlFZQW1Fb3oxWmhtbG80bGU4MzZMTWJOS0lOQXRhbWl5ZVptRUd2NE5BU09KaVpiV2R1TXlTZ1NIbjVlelNNVWdoTi0tWURBNW5uVm44MHF6dUZwVEJhMlQ2d0I0MllMU2JiN01UZ0FMUXUtMFNEOFlSdjVSQzBHc19Sa3E4X2gwdjlicEVR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA Brings Simplified Local AI Support To NVIDIA GPUs Carrying 24+ GB VRAM While vLLM &amp;amp; &amp;amp; llama.cpp Optimizations Boost Compute By Up To 1.9x - Wccftech</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA Brings Simplified Local AI Support To NVIDIA GPUs Carrying 24+ GB VRAM While vLLM &amp; &amp; llama.cpp Optimizations Boost Compute By Up To 1.9x&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNMTQzN3NhU1hiZ3VOWkNMRmJKYTZHcWt2OEswTUlpRlpXOWk4V0NNRUgtWmNfWkphOFc3dXhEcG5sS3FCeGM0bDA2Ql9nODhLV0VUTHNnRlZObWdBYkpDMHFrc045ZW1YZVR6aDVoQTJfWkFpNHphd3pnTjVrS2FEQmNGdEw1UmJBdlE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>NVIDIA RTX Spark PCs Packing 1 Petaflop Of Local AI Land In October - HotHardware</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;NVIDIA RTX Spark PCs Packing 1 Petaflop Of Local AI Land In October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;HotHardware&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQbmp5eHc2N0xxcE8teFNJUlFPeTRzTEJBME9kSV92dG5NVndPTElFcDNHek1INGhoc2tSQl9Jemk5WEdDVnJPN014dmpOUzEweENpVzRIekVaOVhpY1lsZlZna0NOVzE5WVpBNlNHYkQ1N1U3ajE3U3lOSW5ZMVp0UFVleW5kcXdBcXpkY25HMVAzU3FOTHBqN1BDWjV2WGRIcVp5VTVVY2Zvc0tseGJpZmlKSkhfamxhMjdkMllfVWpiUG9JWFFNag?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia launches free tool that links idle computers into a personal AI data center - The Verge</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia launches free tool that links idle computers into a personal AI data center&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Verge&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOWnBhQmVuUUpBVUtpeEg0Sl9SaTE2eU5WODBZVlo2ZF9ZbkpPMG95Q0NTTVgxbjhTVE5uM0xnLU1zRmg3bkFkcXpkd085bXB3NHZZZTVtSTg3UG9FcmFuV0R1cjFDMVdXWXVWT2cwdU5YdXpvY1E3R2xhb1d3ZFNHWF83Ums2Ymt1cTNRV05yR1c1UDhzSzlrc0U2RQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Traviss Green on Zimperium's On-Device AI &amp;amp; Mobile Security - ExecutiveBiz</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Traviss Green on Zimperium's On-Device AI &amp; Mobile Security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;ExecutiveBiz&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQNkxHVHlmR0pRbVVwbWJJSVNkUDNRZGlzNWg5MjVXQ05nY1c2R2txY0dtX01MTGhidXNVZTVsUXk0bWJCUVZtQWFCTWdPSThhMElHQ18zaWNvTFFRVGktejY0XzRTWGg3eDB2eXRlZWtTdUFYTTFPYkU2b29ORzVwZEoxSmtuRWd0SVZpa2RDV3R5YnE0TnpqUEZSX3phMWVjYnc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Anker’s MindBase Wants to Be Your Home’s Local AI Brain – No Subscription Required - forkast.news</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Anker’s MindBase Wants to Be Your Home’s Local AI Brain – No Subscription Required&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;forkast.news&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxPeUJrZFhSN3lkcFlmc3F6dlpyTG5sdGNxWi1UeFptUzFuQzQ3NHhmbVRjWEhKTEx0bURJcEhEZU5OaWs5emM1MDNhdHNwenNnSmlRcU1wVC0tdkVwdzVoQ0Q5UzFsT1l5Z2hnejNLZ3NTbUd5NmZyUXdjRDBWT0p0T1lweGhXVzNQNmpZcnZtMlEtTnFnN1JaSjZEdmdaRUExMHJsQlNfSWFrS3B2U1FkWkJlNTJKeHJqTnpJcWpTVXdlcklfcmtmRENR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Anker's MindBase reinventing the connected home with local AI and expansive storage - Global Sources</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Anker's MindBase reinventing the connected home with local AI and expansive storage&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Global Sources&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQUjRSajF5N01kTDJlTTg2MmhvakhiR0MwSHByUTBWdTd1bVAwN3FSRnU1eTFuWFo0cGQxb1hoMENzeHRzMk11alVLUHp3TGNWdlpXV3h0R2V5ZUE2QVVWSkFBTnM0aDRZQXhpQTN1ZzRQSDRybTJOUG5jRFQ0NC1lTGprM29XbHBLYzNFeg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Anker's MindBase Brings On-Device AI to Smart Homes - The Tech Buzz</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Anker's MindBase Brings On-Device AI to Smart Homes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Tech Buzz&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOVXZvc3pfNFlDUHRHc3Z5T0IwU1NISndVeS0wSXhPaGhaOG11cG5ZR2xDZnpzVWo2T1F1TVIzZWpaaU1CTjdya0VPYWh2MGRKLU1nNk5nUjJiYmZHMzNEcXR3cWRuU2xncWRYaFo4b3IyUXE2TGZzUFdzeklOYkhDeDM0VDN3cmVZc3dzTWdzWU9WNGtqd1dnbGRkYm1XS2UtTDA00gGwAUFVX3lxTE1SSnN4cFdkWU93UTNsYk5xdDdlcHhMcFJod293cDdLd1F1NnZnaVJzNVJVRnhuMDJ5d21KLVFTSzAwaElCdDVvU2xfd3lHaVp2U294Sl9qaUppajloU2UxVVpQZGVJZy15YllwQ0M1LTJYUFpyamQzVXNsRE5rUFcyRm5rQTU0NFFTLVFpZnFydzFaaHpWTFZzS1BVMnI0UDl3RmhGMnVLRm04YVVWNG5F?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Nvidia CEO Jensen Huang’s India AI Bet: “Build The Local AI Economy” - outlookbusiness.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Nvidia CEO Jensen Huang’s India AI Bet: “Build The Local AI Economy”&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;outlookbusiness.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="cat-section" data-cat="Musik-AI">
+            <div class="cat-header">
+                <h2>🎵 Musik-AI</h2>
+                <span class="count">30</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE80cTlDQU1RU2FBTGJLdWpJMGUyak00LU1TX084SWNZeWdEN0tVNmRWaFk0QnVvTW1lbG8zREhzQ0dJWl9Sb2FkdGRqWTZ2YkoxeXZJeEFqM2JIR2dlTFE4ZURXSE9XdV9ZbG1NYktmTld1cnc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>MAN AND ROBOTS: Mary J. Blige Burned by Suno AI, ArtStation’s AI Pushback, Gal Gadot Admits She's Scared, George Clooney’s Deepfake Nightmare, &amp;amp; ‘Lanterns’ as AI? - Substack</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;MAN AND ROBOTS: Mary J. Blige Burned by Suno AI, ArtStation’s AI Pushback, Gal Gadot Admits She's Scared, George Clooney’s Deepfake Nightmare, &amp; ‘Lanterns’ as AI?&lt;/a&gt;&amp;nbsp;&amp;n...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOVWwyU01za3E1RVZoQWxNMG51TUpFTFFqcmhDYWh0VHVGSnZwal92MzBWWWh2NF8xUUdTcTZrTXoxYWRlZS01WmVkUERVYUs2SC1DVFBHRllTWHVJVjFSdnhoZk5OcmFJMzlnTGtVNWJrYTNNTDhJQmJRUk1VQ0dCaHp1NGpGZmdabURpNFI2cENzdU40cktV?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Texas blues musician joins group suing AI company over likeness use - Chron</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Texas blues musician joins group suing AI company over likeness use&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Chron&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxONy03clYwdVg1R3R3TkdQT2FrVWJBZndJYjhSc0lvbXNZaVNTX005X2dUdVQwUjZiLUJ1NGQ1U2xqb29wNVBOM2tzUEtkOHNQQkYycUhHME5BX1MyNUhTUlVqM0c4WjNIc3YweUFDbzFoWUJ6SndGX0lPdkFEQzNRNWs0dTRZZHdZYk0wa2g4cjlZYkxOYVA3WVBB?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Pulls Mary J. Blige Ad, Says She Never Authorized Campaign - Consequence of Sound</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Pulls Mary J. Blige Ad, Says She Never Authorized Campaign&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Consequence of Sound&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQWmNYZDdmYWpXV3VLdHlXYWo5ank2NFp5NlBhbUNNUDhLNXU1WnR6YzNzdlNsa0Q0WFNKaDZCZEIwMGJLSk5NRTlUR2NjME9Ia3JvVW9yUDB6OHpIekFKZnJYMUJnODB1S2sxM3hfakFpeTFPclIxQjZjX1NHSndHNlNYbnc3cVA1UGhwb3BfaVQzT3dGRTBSS3JSN0ZfQnhHdXRxUElmakNZc096SnZEMTlBRUVKQQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google brings its Lyria 3.5 music model to every Gemini user - The Next Web</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google brings its Lyria 3.5 music model to every Gemini user&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Next Web&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOTlVGUnJpc1piZnZSbzNoQ19jQnl6Z1BLOHdHVEczX0x1Q3FESWdfdDEzY25YSTBKdXk3RWZ4MFZocjRaQmkxM3V4Z1FfNC1mRmdEN3hJcTJ4Rmd3SnJEU0FfU1ROVHpWWk43WG1lbFhTR1lpQlBfN3I0VjdpZm56Qg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>SOCAN sues Suno over music copyright infringement - We Rave You</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;SOCAN sues Suno over music copyright infringement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;We Rave You&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPVDdfeXBIUTVodkEwRDh4YjlYTFpDVDJmUFNfTUE5SmhtYWhiOENSR1E3clY3bUlvTy1KSjFENktnTkFWN3ZFZkdHZHhLaGJ3M01ocXlZUTQ0SXU2QTJMUHVINkxtRVMzcV85RkQ2akhBekFEcTlkTy12NUl6SEg4aXhTMmJkQjVpZlUtYkVRU1BwVzA?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google adds music generation model to Gemini - Breakingthenews.net</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google adds music generation model to Gemini&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Breakingthenews.net&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOU2xPcEdReTQyU0tCUHNIZExEMXlsbnkwcWJXMDMzbXR5OXFfSXpzWXVybzJ5UHFjREt5Smd6X291ejdSRkN5NmtBV1VBclBnaExNOFRUMFQyTVppMzNDc291SWZ3QlZNNzREdFVZQ3ZfbEoxQnZpcDBLTC1PZklMT3Y5YTFrSWNQalVRSHBJZ2J4Zw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google Brings Lyria 3.5 Music Generation to the Gemini App and API - Unite.AI</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google Brings Lyria 3.5 Music Generation to the Gemini App and API&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Unite.AI&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOM19zYWhZcnE2SG5ZYmVTdnFXUTFMaGVhQ1lKWUhUVXB0azNDVlhJSjJqV0RQRkJ5QWZPY0ZlWWpaRU1BWUo5dmZuYkpJbk83UFdBanpVY3BXTkUtWHF5cnJjUFlkWEd4TGRmQ0Z2VmVWZXd1dTVXTnNmUTJUNWZHWFRnQQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Google's Lyria 3.5 Brings AI Music to Gemini - The Tech Buzz</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Google's Lyria 3.5 Brings AI Music to Gemini&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Tech Buzz&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ0VpVDFJLTdyZm9CeHdwM1JhUEFYWENkNi12LUdIVFZsWE5zRHRxallxVTlqNklrdnhJbnNFbnVMcWhuc1FiZHZZSUFvSEt0d3ZfT1JFc0Y0Q2VXcWtLbW5DV3RHcXViWjhERWVySnJHcGxFTGpZbS1GNjVkcWM4SWhYRldpb0hOREV6djRfZnFjbTRxYXdBeGlwZld1Sk9PcFN1OTZn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno pulls controversial Mary J. Blige AI ad after 'representative' fraud - PRWeek</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno pulls controversial Mary J. Blige AI ad after 'representative' fraud&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;PRWeek&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxNN085QTZhN1NWbElyY29ZbEJPeVZ6WGdRcjRoV0NUaGdBc0tvVlJBVmJpQ3BuXzdXeTNMWWV5RHZWbUVZZ1FyUUNrd3dWTEtxX3NydkNhWEt6OXhhZ1g3RHFvMTlUSmtjQWhqa1A2YS1DaUM2NXJlaGxyNXdFRGRtYzhGQmFKZnA0enNFdm50aVFTcEEySnlMZGhySHpITTdtWVU2Z0liWHR0R2k3a29qd0RnY3N0OFhpT2xRNkllNXRTc0U4Y2NWdVppUzE3UQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Wait, Does Mary J. Blige Actually Hate AI? Suno Pulls Controversial Ad With R&amp;amp;B Legend After Disapproval - VICE</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Wait, Does Mary J. Blige Actually Hate AI? Suno Pulls Controversial Ad With R&amp;B Legend After Disapproval&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;VICE&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE9EUmZrcEphWnhWTnlqUmNhTURYUmNZMTlFc2VJM21VNHJOQndGQk1mUEwtQmprRmlBLWF3V0o1Z1VrZG94R3htRW5naFN2NC1lNFk3djRQMmlaZDVpLWdmVi1tVUpmYzQwWld3eTRFUUFPOGZpNUdXUEhR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Yanks Unapproved Mary J. Blige Campaign - WBLS</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Yanks Unapproved Mary J. Blige Campaign&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;WBLS&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUG1pX1BhTlN2TWt5VjlVR3JPd0ZwbmxGcHB1NDBGeFhjZTdYMWpWcjJFMlJRUTZia1I0MVduWkpNczFEblMwelhadGxDZlBmaDlERm1rT2N2djF2dWEzU3pzc2RLLTRNTm9yV21oSkxrNG1mbGw1R1A1aVl6NUtNWXc3aUxlZ0I4X2JR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Mary J. Blige Caught in Another Ad Mess as Suno Pulls Unauthorized Campaign - Complex</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Mary J. Blige Caught in Another Ad Mess as Suno Pulls Unauthorized Campaign&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Complex&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPLXlMRG9ERWJHbHVKbml4c2wyemRIQTBVb0VMQlljYUZSelp0bDNQZk1lYk5BcTZPcGNoa180WDljcVZwZUJOOWF1VlFYNXQyWU1iTGNwU1IzekpOSVlvS0lfYVIwSFV2azVUQXgwQ2Q4aGVhLUVsdmNUa0YxamFMSXdJZXZLZEZiOThzVWMzVnJPQU1abVRBRFFjNDRBRDZxbDhGa0tlNDdXdWh2ZzMzN1lR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Pulls Reviled Mary J. Blige Ad, Claims They Were Misled About Her Approval - Stereogum</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Pulls Reviled Mary J. Blige Ad, Claims They Were Misled About Her Approval&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Stereogum&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPNUdqS1ZPMDBlXzAxelJ1VTVja013UGExSDFEdzViU1ZhX25zVFpxcG5oYWRpekpma294d1l4ZE92M1NRQVZhazg4R0NFM1cyU1FNRW5hMTd6a0EwWHpwY1plaEJ2WDZVUW9zZ2VaWW1xODNnb1BzWnRkUHItQmVfRko1aTIzME5RemZDdXRLX0NCTGdQc2MwbmR0bVRHZw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno pulls unapproved Mary J. Blige ad campaign citing deception - Music Ally</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno pulls unapproved Mary J. Blige ad campaign citing deception&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Ally&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQbUVPcXZyaU1zMEFyS2pFVy0zaC1VOXV2NUNIWG0xb2xRbWxwWDg0S2J3Q3FSekJqTkpCOFJQSkk0UmpxTVRYZllKdV9iS0Q1VnZHNFRibThXOGxsZjdUS0k4VXZDZXR6ZGE4ZGdjUnJLa1V4ZXJ4eUUyX2t2ZEV1WHllNHBNdkc5TUNFenFFRlBxbVVnVGtfS2d3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Breakfast Briefing: 5 things for PR pros to know on Friday morning - PRWeek</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Breakfast Briefing: 5 things for PR pros to know on Friday morning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;PRWeek&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxOSGJwd2RMVEVBWGNLTl9CMmZydG1CaVZWT0p1WnVnUFBSNEwzNTBranZfdDQwUTZ3cFlmNV9BeVkxcmg4aFMxRHhyTnNXenVFc3dFZnRRTEdHMkF5aGl0MDBNbE92OHRZTzJOV0NWWmFBbEVyaThOTE45SlpQZG8waEFZalNJTzZvLVlJZGxvSUlyOGZfRmc5WHUxRTBkRkFxd0MyV0FSVlpReFJ6dENYLUgxaDhsYi1RZVhPNHEzQmtKeXJmYmlmeFEta2pEbTN2elhCR3ZrNncxWnlUcHA1c01KUnpVMFo3Z19wSmFmcTdpU21XVDNYcS1JOXpKS29O?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Jason Isbell and other musicians file lawsuit against AI software Suno, alleging it copies artists’ identity and style without consent - NME</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Jason Isbell and other musicians file lawsuit against AI software Suno, alleging it copies artists’ identity and style without consent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;NM...</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPcVluYkZBUnQ5SkZJWmpzakJNUG5pWGJ5NTRkdTdIaTl5bjdINE1jZ09vMWFFelJmU0xKVXl0dU9lUkN6aGs3Nk5tVkhKVDBHQjFFck9BQmUyWnFoY2wzN2JGWWhReFRJd2tDWEF0RUtVb05FUHNDa2hNNHluVXBDM0NpYk1YclNOcnZQamxfd2VLWFZlZlQyMGxRcmROUQ?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AI music generator Suno removes advert starring Mary J. Blige - Yahoo</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AI music generator Suno removes advert starring Mary J. Blige&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Yahoo&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFA3QlhsWHhNNTZfbmVhMjNPZGo5LTZ2VktwQTdSMWJsckhNME1NTENDc294TjJwX19MdEpfVmdlOFJLSDlBY3NFSmVTcGllLUcxaTc2R2p1MDZLQkFTZ3hGSzlHY1FaRFo0TFRPd2xJcEJCWXR4UWt4MDl3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Nixes Unauthorized Mary J. Blige Ad - Digital Music News</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Nixes Unauthorized Mary J. Blige Ad&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Digital Music News&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOME5EM1JHMV9adDFxaDZFQ2ZEZ29GWFNkZWp1ZXBMVTViQWg2bUtQaEJ4NFVKcjVnbzBvQ2RhcFNOUUJ3VTJJSkljWkFrbTdpZ1g5UDhVblFtdUhTdmZLMmJRd3Z0WXhub0M5Rzl6Tk1ON2c1ZjdFNUZYSmlPSnJRdS1IUjlQUE5yYmViQjNrMnUtR0xpZkJzckVZeUtnT29PcUk0VUh0OXd5ZWRZWDNKN1VCT2t6cjg?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>AI music company Suno pulls Mary J. Blige advertisement, says singer was ‘uncomfortable’ - TheGrio</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;AI music company Suno pulls Mary J. Blige advertisement, says singer was ‘uncomfortable’&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;TheGrio&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQRlFFZDU0aHY1UHo5STdqYmN0d1lmekhRLXdFVWZ2SjloV1Z6VmJPanc5ZHk3Wl9JM2JfUDZ5dGE5dmdYd2tkX2RjWkpXV1FGZmx3WE1qUkhBRk8xN21hQkdmcU1IM1RMWVpMdVBjN2dFekN4ZjBuZUM2X29TaXFsdm9RWl8xdw?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Pulls Controversial Mary J. Blige Ad in Which She Calls AI Music Generator ‘Pretty Dope’ - Billboard</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Pulls Controversial Mary J. Blige Ad in Which She Calls AI Music Generator ‘Pretty Dope’&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Billboard&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNeEpFbEVQeTNzeFN0NWJWVHBwdUVWd0RzS293OVlRa1JSVERENFpuQTVrSmdEcHZjeHNLdFB4U0tUTDVGdEFyWG1XOUlRSXRUc1RIT3I2UWs3bGVXZ3dHcjVvaUpzQ0x2WGFkN214MnM1dk1xa19wN29rd2poRTdENzJOa21fNGdnTF90VGU3R1JFNkQ4c190Qk9BdHRpblVZM3VVTXFvX20ya1dqMEE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Jason Isbell Files Class Action Lawsuit Against Suno, Accusing AI Music Company of Exploiting Artists’ Identities - People.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Jason Isbell Files Class Action Lawsuit Against Suno, Accusing AI Music Company of Exploiting Artists’ Identities&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;People.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOYTlKZnZualQ5X3I5Y0RvWjJSR2dKdHJGaWpDUVNOcmlyZ0xHc1pMd3lnRVRlRC04V2RQZnNzOVJucEN5a1pXV3FwR3Q1d3JDd0lOZUNqTURtbkx2VUNZOXpnQ0FNSWcwNnF4QnU4cXNXdXhVOTdLTmtFRGpCZXBVeUROSUEyUjZ5XzhaR3NkRFhxNTVxcUcyOWJHanFLTGJOYWxucHdOU19UWTlUaXQ4ekh3?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Scraps Mary J. Blige Ad After Making It Seem Singer Endorsed the AI Music Platform - The Hollywood Reporter</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Scraps Mary J. Blige Ad After Making It Seem Singer Endorsed the AI Music Platform&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;The Hollywood Reporter&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOWmNoOGJmU0kwbTNObXJwcjBrMkJKN3VYdTY0dEpuN2xMckhDbU9CRVpMVU05SnloU2lrcU5SRWFxcmo1ZU9RbXhYUzJwVmNwSXlJTExIT1AzOHFpX09kRVhMUEs5eFZvZ3VHenp6bjdteGx4SDVhdEEyX0gxN2JVUGdweURheGpiVDFzc0VseGJ2NG9FV2ZMSWtoQVlCUW5KTkhOQ0VubmxOcEtrd2FDaVBn?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Jason Isbell Leads Class Action Lawsuit Against AI Music Generator Suno - RTTNews</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Jason Isbell Leads Class Action Lawsuit Against AI Music Generator Suno&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;RTTNews&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQakI0Wmx2QXFpZVdqU2NhVk9JWWNvMGdsVEJ2YmpENVhNUmtxVkx0RW14clpiYkgzc0MtcWFlM3VTV0gxOGhPbkF6SUxaekZCd1dFbUY4VHFUNkZXQVEyUmJsbC1scWZlOGFsSE5od3EzbWZRYktmV3pRZWdHV3ZZem5TRzlhLTc4OXkxai1iXzl2OWpLQVhxZ3lCMDk?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Suno Kills Controversial Mary J. Blige Ad Where She Seems to Endorse the AI Music Generator (EXCLUSIVE) - Variety</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Suno Kills Controversial Mary J. Blige Ad Where She Seems to Endorse the AI Music Generator (EXCLUSIVE)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Variety&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNejVyZ21pNHlHRGt1UFFsZU9Sd1BiV1F4UG9neDdqNnQ4VXprckp2RDBtbWZMMUthRkcxa0F2T1J5VzB5UjU4M3hVbUhnX01QX2J0ZHpHLW9IbjBrUk5UZzFUWXEweV94SHZScFdBMk1sbm96R3dwUENiNHl6UDVzU29ILV9pMXZiWTl6b29VX01wZE1WVWtqNTROelFwbVRnTXI5R1pOaS1VVFlndWxmZGFHb1o5YnFETWNMV0V30gG-AUFVX3lxTE16NXJnbWk0eUdEa3VQUWxlT1J3UGJXUXhQb2d4N2o2dDhVemtySnZEMG1tZkwxS2FGRzFrQXZPUnlXMHlSNTgzeFVtSGdfTVBfYnRkekctb0huMGtSTlRnMVRZcTB5X3hIdlJwV0EyTWxub3pHd3BQQ2I0eXpQNXNTb0gtX2kxdmJZOXpvb1VfTXBkTVZVa2o1NE56UXBtVGdNcjlHWk5pLVVUWWd1bGZkYUdvWjlicURNY0xXRXc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Alabama music star’s lawsuit compares A.I. company to ‘Star Trek’ villains - AL.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Alabama music star’s lawsuit compares A.I. company to ‘Star Trek’ villains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;AL.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPU0ZJaGw4anMxRzl5eU5CMDhybUJiQlBWT1NObTc1VDQ3bFhPbDBJTVl0cXpneEMzVEFEU3RHTXc3SkI0SGRQTUlOSkl5LU9rRFdCc0Q2Umt0ZC1adEZnNVlaUEhFZktWZE5UVWJVM3FLQWpWQUI4X1RCWU9jRHBlUUZB?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>SOCAN Sues Suno Over Alleged Copyright Infringement - Hypebot</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;SOCAN Sues Suno Over Alleged Copyright Infringement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Hypebot&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE0wOWUxUGd1akFmcGgyQ3dBcFpHc3hEUnlweGotdEZZczk2N3kwOUhiWHJLTWowWk9McFpOUmQwakNZMUhIYk16OW05MHdQWmlxU1N5OW80dnFKRkZocTA3ZTNSLWpNcENHUHc?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Mary J. Blige Disavows Ad For AI Music Company Suno - SPIN Magazine</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Mary J. Blige Disavows Ad For AI Music Company Suno&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;SPIN Magazine&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPdktGREkwLUljbFQyUmdGRExaekhVYzNhenJVNzRSYXlJRjlUNFFYMjViZUFlYjZDeDZUWHVoZVgyRmFUMk5rd1lvYl8ycmdHS2daU3B2aE9uM1FSSG5qRjFSMl9NX09hVms2bmk5d0UxWUlja1Nfd0NZR2pVMi03dW9RZ2VvcTZselJxOFZmYVpFZXFoVXJIM1RUVGxyTl9BTWVORXhwRXFfdDRmWkJMSTNPOXNpZDMtSUE?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Blatant “Sk8er Boi” &amp;amp; “Life Is A Highway” AI Ripoffs Cited In SOCAN’s Lawsuit Against Suno - Stereogum</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Blatant “Sk8er Boi” &amp; “Life Is A Highway” AI Ripoffs Cited In SOCAN’s Lawsuit Against Suno&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Stereogum&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOT2YtalZmMWgyc3E2bWRFTFZJRlN5NVVteW9rWjRzMVRZTmlSSFpkWGlPTlhScUt6RHBnNHk1R3pSQjE3OWpteHZUSkRZN3o5ZDFyd2pCVnFlRnRIS1BhVFFjXy0tdlZyRml1OGE1cVd3YUJubk5pbG1fTTVMeE9LM0FNRXhfMEJ3RnRDSjNFM2Y0VEpfNXVQUUJhMWM?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Canada’s Socan files latest music-industry lawsuit against Suno - Music Ally</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Canada’s Socan files latest music-industry lawsuit against Suno&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Music Ally&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMV9TbmU1a08yRDFoYmpSQkt5UVZKUGZtNk93MHEtbHpqY3FVMWFnQVBLYjlmeDNzckl5V3hBcTcwRnpNb2hEbFNjWHhXenByS25yTnY4OUs5eUwtd3RSb2wzV3BmT2piLUpTak5WOEExajBQdGhmV1NtYWw1YUw3ZHNVXzFzXy1fc0NWd3lZdWw1eGZnVU5SUjV6YWtWbXdDQW4xSUlnYW9yUnFJOGFwSFZHYUs3OGd0b25VdTZzQmlyNEHSAcgBQVVfeXFMUE53S2k3eHVBV2RFb3pRc2RUOUZRWXBuc0NjYnJMb2lLTGFRSF9VYk80RktjUEFiOUZld0R2cnpaMlFMRjBCaDV3emg5ZVFKTzZLRlprdmpDXzhYcGt3ZmZaSGJPN0otM1lXWEpvNjdiU1NDUExISnBud202b3dCMVpvS2s3SlloSEtsaEl1bzFRRk9lN1NlZFJLSUtjeEViUHB0WGRpTWpvczVxTEllal8tdkNFb0lyVkQ2S2VwMktKSG5yZ0g5UUU?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Oreogate was never about Oreos, it was an ad for AI music app Suno all along - Firstpost</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Oreogate was never about Oreos, it was an ad for AI music app Suno all along&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;Firstpost&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="cat-section" data-cat="Unreal + AI">
+            <div class="cat-header">
+                <h2>🎮 Unreal + AI</h2>
+                <span class="count">1</span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxPdURLaTdwZG1wRkU1dUtEczdyeWtURGl0a3NQR3ZFeWxXSkJ5MXNMN1FxRFpGRjRsd3V0bHh5WXpkLXJhZ2JFT3V2OTB6eDVwSmpMVlhocmQ1TTF4aFRxWkVNbDA1OGFvTng5cTJXMzc3dVdzU1ZnU1VxZW1pdUpTSmk0NlEtSmdneWplZzFSd3VOVkJkWS1RTHEySDdxVHhjTXBqUFNFYmZvQnI4bkdNMEZPN0ZvMDJYVUZnS05TRS1TMnBXT3VwdVZELUk2WEVBSnE5VUpR?oc=5" target="_blank" rel="noopener" class="news-link">
+                        <h3>Qualcomm Adreno Neural Fusion Puts AI Inside Mobile GPU: Unity and Unreal Already Onboard - techtimes.com</h3>
+                        <p class="summary">&lt;a href=&quot; target=&quot;_blank&quot;&gt;Qualcomm Adreno Neural Fusion Puts AI Inside Mobile GPU: Unity and Unreal Already Onboard&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#6f6f6f&quot;&gt;techtimes.com&lt;/font&gt;</p>
+                        <span class="read-more">Läs mer →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            🤖 AI-sammanfattning av <a href="https://github.com/steffost/ai-news-daily">Oris News Bot</a> ·
+            90 träffar från 6 källor
+            <br><br>
+            <a href="https://steffost.github.io/ai-news-daily/">← Föregående dagar</a>
+        </footer>
+    </div>
+</body>
+</html>
